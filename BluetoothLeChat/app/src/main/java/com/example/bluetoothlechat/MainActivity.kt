@@ -36,4 +36,5 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
         ChatServer.stopServer()
     }
+
 }

@@ -13,6 +13,14 @@
         <entry key="..\:/git/AndroidStudioProjects/connectivity-samples-main/BluetoothLeChat/app/src/main/res/layout/item_device.xml" value="0.12135416666666667" />
         <entry key="..\:/git/AndroidStudioProjects/connectivity-samples-main/BluetoothLeChat/app/src/main/res/layout/item_local_message.xml" value="0.33" />
         <entry key="..\:/git/AndroidStudioProjects/connectivity-samples-main/BluetoothLeChat/app/src/main/res/layout/item_remote_message.xml" value="0.2838541666666667" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/activity_main.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.33" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/fragment_device_scan.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/fragment_enable_bluetooth.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/fragment_location_required.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_device.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_local_message.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_remote_message.xml" value="0.371875" />
       </map>
     </option>
   </component>
