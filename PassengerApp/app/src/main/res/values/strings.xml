@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">PassengerApp</string>
     <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="logout">Log out</string>
 </resources>

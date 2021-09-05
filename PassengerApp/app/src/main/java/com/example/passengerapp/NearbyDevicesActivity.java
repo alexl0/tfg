@@ -23,6 +23,9 @@ public class NearbyDevicesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nearby_devices);
 
+        //Action bar with back arrow
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Get variables from xml
         devicesListView = findViewById(R.id.devicesListView);
         studentsSpinner = findViewById(R.id.studentsSpinner);

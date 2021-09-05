@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
-    //Rueda de ajustes de arriba a la derecha
+    //Top bar navigation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);

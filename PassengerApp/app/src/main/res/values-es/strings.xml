@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">PasajerosApp</string>
     <string name="settings">Ajustes</string>
+    <string name="about">Sobre la aplicación</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>
