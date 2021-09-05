@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -31,8 +32,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showSnackBar();
+                openNearbyDevicesActivity();
             }
         });
+    }
+
+    private void openNearbyDevicesActivity() {
+        Intent intent = new Intent(this, NearbyDevicesActivity.class);
+        startActivity(intent);
     }
 
     //Mostrar Snackbar (como un cuadro de dialogo abajo tipo system.out.println o system.out)
