@@ -10,4 +10,6 @@
     <string name="authentication">Authentication</string>
     <string name="authenticationFailed">Authentication failed.</string>
     <string name="welcome">Welcome</string>
+    <string name="userInfo">User info</string>
+    <string name="nearbyDevices">Nearby devices</string>
 </resources>

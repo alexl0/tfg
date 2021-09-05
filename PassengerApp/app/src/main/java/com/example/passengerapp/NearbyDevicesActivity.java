@@ -25,6 +25,8 @@ public class NearbyDevicesActivity extends AppCompatActivity {
 
         //Action bar with back arrow
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Action bar title
+        setTitle(getString(R.string.nearbyDevices));
 
         //Get variables from xml
         devicesListView = findViewById(R.id.devicesListView);

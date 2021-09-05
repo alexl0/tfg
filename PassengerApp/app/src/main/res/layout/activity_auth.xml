@@ -7,6 +7,7 @@
     tools:context=".AuthActivity">
 
     <LinearLayout
+        android:id="@+id/authLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -21,40 +22,53 @@
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="5dp"/>
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="@string/password"
-            android:inputType="textPassword"
-            android:layout_marginBottom="5dp"/>
+            android:inputType="textPassword" />
 
         <LinearLayout
+            android:id="@+id/shadow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/signUpButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="@string/signUp"
-                android:layout_marginRight="5dp"/>
+                android:text="@string/signUp" />
 
             <Button
                 android:id="@+id/logInButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:text="@string/logIn"
-                android:layout_marginLeft="5dp"/>
+                android:text="@string/logIn" />
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/googleButton"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="@color/browser_actions_bg_grey"
+            android:drawableStart="@mipmap/google_icon"
+            android:paddingStart="16dp"
+            android:text="Google"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

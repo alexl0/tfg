@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,9 +23,12 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
+    private ProviderType provider;
 
     public enum ProviderType {
-        BASIC
+        BASIC,
+        GOOGLE
     }
 
     private ConstraintLayout parent;
@@ -51,13 +56,19 @@ public class MainActivity extends AppCompatActivity {
                 openNearbyDevicesActivity();
             }
         });
+
+        //Data saving (so when the app is closed, the user does not have to re enter the credentials again)
+        SharedPreferences.Editor prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit();
+        prefs.putString("email", user.getEmail().toString());
+        prefs.putString("provider", provider.name());
+        prefs.apply();
     }
 
     private void setUp() {
         if(getIntent().hasExtra("user")){
-            FirebaseUser user = (FirebaseUser) getIntent().getExtras().get("user");
+            user = (FirebaseUser) getIntent().getExtras().get("user");
             if(getIntent().hasExtra("provider")){
-                ProviderType provider = (ProviderType) getIntent().getExtras().get("provider");
+                provider = (ProviderType) getIntent().getExtras().get("provider");
                 textViewWelcome.setText(getString(R.string.welcome) + ", " + user.getEmail() + " (" + provider.name() + ")");
             } else{
                 textViewWelcome.setText(user.getDisplayName());
@@ -95,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.logout_menu:
+                //Remove data saved
+                SharedPreferences.Editor prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit();
+                prefs.clear();
+                prefs.apply();
+
                 mAuth.signOut();
                 //openAuthActivity();
                 onBackPressed();

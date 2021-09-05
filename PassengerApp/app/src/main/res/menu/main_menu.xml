@@ -16,4 +16,9 @@
         android:id="@+id/logout_menu"
         android:icon="@drawable/ic_backarrow"
         app:showAsAction="never"/>
+    <item
+        android:title="@string/userInfo"
+        android:id="@+id/userInfo_menu"
+        android:icon="@drawable/ic_userinfodark"
+        app:showAsAction="never"/>
 </menu>
