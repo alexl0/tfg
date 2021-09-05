@@ -4,4 +4,10 @@
     <string name="settings">Ajustes</string>
     <string name="about">Sobre la aplicación</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="password">Contraseña</string>
+    <string name="signUp">Registrarse</string>
+    <string name="logIn">Iniciar sesión</string>
+    <string name="authentication">Autenticación</string>
+    <string name="authenticationFailed">Autenticación fallida.</string>
+    <string name="welcome">Bienvenido/a</string>
 </resources>
