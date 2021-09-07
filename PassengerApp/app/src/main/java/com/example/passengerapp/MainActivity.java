@@ -3,10 +3,16 @@ package com.example.passengerapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,12 +22,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int PERMISSION_CODE = 0;
+    private static final int REQUEST_ENABLE_BT = 1;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private ProviderType provider;
@@ -62,6 +74,48 @@ public class MainActivity extends AppCompatActivity {
         prefs.putString("email", user.getEmail().toString());
         prefs.putString("provider", provider.name());
         prefs.apply();
+
+        //Permissions
+        getPermissions();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //Check if bluetooth was successfuly enabled
+        if(requestCode==REQUEST_ENABLE_BT){
+            if(resultCode==RESULT_OK)
+                Toast.makeText(MainActivity.this, "BlueTooth enabled successfuly", Toast.LENGTH_LONG).show();
+            if(resultCode==RESULT_CANCELED)
+                Toast.makeText(MainActivity.this, "BlueTooth could not be enabled", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void getPermissions() {
+        //Location permission
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(getBaseContext(),
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                        MainActivity.this,
+                        new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},
+                        PERMISSION_CODE);
+            }
+        }
+
+        //Setup BlueTooth
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (bluetoothAdapter == null) {
+            // Device doesn't support Bluetooth
+            Toast.makeText(MainActivity.this, "Your device doesn't support Bluetooth", Toast.LENGTH_LONG).show();
+        }
+        //Request the user to enable bluetooth if disabled
+        if (!bluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
+
     }
 
     private void setUp() {
