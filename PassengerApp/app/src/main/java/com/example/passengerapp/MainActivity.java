@@ -75,8 +75,12 @@ public class MainActivity extends AppCompatActivity {
         prefs.putString("provider", provider.name());
         prefs.apply();
 
-        //Permissions
+        //Get permissions and enable bluetooth if disabled
         getPermissions();
+
+        //Start scanning for bluetooth devices to store them in the SingletonDevices class
+        //BluetoothThread bluetoothThread = new BluetoothThread();
+        //bluetoothThread.start();
     }
 
     @Override
@@ -105,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Setup BlueTooth
-        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        BluetoothAdapter bluetoothAdapter = SingletonDevices.get().getBluetoothAdapter();
         if (bluetoothAdapter == null) {
             // Device doesn't support Bluetooth
             Toast.makeText(MainActivity.this, "Your device doesn't support Bluetooth", Toast.LENGTH_LONG).show();
