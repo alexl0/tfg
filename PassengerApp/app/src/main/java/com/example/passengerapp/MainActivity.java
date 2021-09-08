@@ -75,12 +75,6 @@ public class MainActivity extends AppCompatActivity {
         prefs.putString("provider", provider.name());
         prefs.apply();
 
-        //Get permissions and enable bluetooth if disabled
-        getPermissions();
-
-        //Start scanning for bluetooth devices to store them in the SingletonDevices class
-        //BluetoothThread bluetoothThread = new BluetoothThread();
-        //bluetoothThread.start();
     }
 
     @Override
@@ -93,33 +87,6 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==RESULT_CANCELED)
                 Toast.makeText(MainActivity.this, "BlueTooth could not be enabled", Toast.LENGTH_LONG).show();
         }
-    }
-
-    private void getPermissions() {
-        //Location permission
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            if (ContextCompat.checkSelfPermission(getBaseContext(),
-                    Manifest.permission.ACCESS_BACKGROUND_LOCATION)
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(
-                        MainActivity.this,
-                        new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION},
-                        PERMISSION_CODE);
-            }
-        }
-
-        //Setup BlueTooth
-        BluetoothAdapter bluetoothAdapter = SingletonDevices.get().getBluetoothAdapter();
-        if (bluetoothAdapter == null) {
-            // Device doesn't support Bluetooth
-            Toast.makeText(MainActivity.this, "Your device doesn't support Bluetooth", Toast.LENGTH_LONG).show();
-        }
-        //Request the user to enable bluetooth if disabled
-        if (!bluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-        }
-
     }
 
     private void setUp() {
