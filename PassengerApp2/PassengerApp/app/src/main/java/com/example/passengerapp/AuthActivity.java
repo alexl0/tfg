@@ -227,9 +227,11 @@ public class AuthActivity extends AppCompatActivity {
      * @param provider for example, google, twitter, github, email and passwd, facebook, etc
      */
     private void openMainActivity(FirebaseUser user, MainActivity.ProviderType provider) {
-        Intent intent = new Intent(this, MainActivity.class)
-                .putExtra("user", user)
-                .putExtra("provider", provider);
+        SingletonClass.get().getHashObjects().put("user", user);
+        //System.out.println(SingletonClass.get().getHashObjects().get("user").toString());
+        SingletonClass.get().getHashObjects().put("provider", provider);
+        //System.out.println(SingletonClass.get().getHashObjects().get("provider"));
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
