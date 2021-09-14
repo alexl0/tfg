@@ -1,18 +1,4 @@
-<!--
-     Copyright (C) 2020 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BluetoothLeChat</string>
     <string name="no_devices_found">No BLE devices found</string>
@@ -37,16 +23,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="prefs_file" translatable="false">com.example.passengerapp.PREFERENCE_FILE_KEY</string>
-    <string name="settings">Settings</string>
-    <string name="about">About</string>
-    <string name="logout">Log out</string>
-    <string name="password">Password</string>
-    <string name="signUp">Sign up</string>
-    <string name="logIn">Log in</string>
-    <string name="authentication">Authentication</string>
-    <string name="authenticationFailed">Authentication failed.</string>
-    <string name="welcome">Welcome</string>
-    <string name="userInfo">User info</string>
-    <string name="nearbyDevices">Nearby devices</string>
+    <string name="settings">Ajustes</string>
+    <string name="about">Sobre la aplicación</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="password">Contraseña</string>
+    <string name="signUp">Registrarse</string>
+    <string name="logIn">Iniciar sesión</string>
+    <string name="authentication">Autenticación</string>
+    <string name="authenticationFailed">Autenticación fallida.</string>
+    <string name="welcome">Bienvenido/a</string>
+    <string name="userInfo">Información del usuario</string>
+    <string name="nearbyDevices">Dispositivos cercanos</string>
 </resources>
