@@ -24,7 +24,7 @@ public class NearbyDevicesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nearby_devices);
 
         //Action bar with back arrow
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         //Action bar title
         setTitle(getString(R.string.nearbyDevices));
 
