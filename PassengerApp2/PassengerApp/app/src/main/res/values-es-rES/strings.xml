@@ -23,9 +23,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+
     <string name="settings">Ajustes</string>
     <string name="about">Sobre la aplicación</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="logoutSuccess">Sesión cerrada correctamente</string>
     <string name="password">Contraseña</string>
     <string name="signUp">Registrarse</string>
     <string name="logIn">Iniciar sesión</string>

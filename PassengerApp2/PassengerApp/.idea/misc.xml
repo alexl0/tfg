@@ -22,6 +22,7 @@
         <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_device.xml" value="0.371875" />
         <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_local_message.xml" value="0.371875" />
         <entry key="..\:/git/tfg/BluetoothLeChat/app/src/main/res/layout/item_remote_message.xml" value="0.371875" />
+        <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/drawable/ic_settingsdark.xml" value="0.22552083333333334" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/activity_mainContainer.xml" value="0.1" />
@@ -30,6 +31,7 @@
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/fragment_enable_bluetooth.xml" value="0.1" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/fragment_location_required.xml" value="0.1" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/item_device.xml" value="0.1" />
+        <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/menu/main_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>
