@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
     <string name="no_devices_found">No BLE devices found</string>
     <string name="chat_title">Chat</string>
     <string name="device_list_title">Pair with new device</string>
@@ -19,8 +20,6 @@
     <string name="chatting_with_device">Chatting with %1$s</string>
     <string name="your_device_address">Your device address:</string>
     <string name="scanning_header">Choose a device to chat with:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 
@@ -38,4 +37,8 @@
     <string name="nearbyDevices">Dispositivos cercanos</string>
     <string name="buy_vouchers_prompt">Comprar bonos</string>
     <string name="my_vouchers_prompt">Mis bonos</string>
+    <string name="numzones">Número de zonas: </string>
+    <string name="numTrips">Número de viajes: </string>
+    <string name="totalPrice">Total a pagar: </string>
+    <string name="pay">Pagar</string>
 </resources>
