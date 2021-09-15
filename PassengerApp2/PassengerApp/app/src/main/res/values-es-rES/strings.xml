@@ -36,4 +36,6 @@
     <string name="welcome">Bienvenido/a</string>
     <string name="userInfo">Información del usuario</string>
     <string name="nearbyDevices">Dispositivos cercanos</string>
+    <string name="buy_vouchers_prompt">Comprar bonos</string>
+    <string name="my_vouchers_prompt">Mis bonos</string>
 </resources>

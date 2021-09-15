@@ -76,12 +76,16 @@ class BluetoothChatFragment : Fragment() {
             findNavController().navigate(R.id.action_find_new_device)
         }
 
+        binding.buyVouchers.setOnClickListener {
+            findNavController().navigate(R.id.action_bluetoothChatFragment_to_buyVouchersFragment)
+        }
+
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
-        requireActivity().setTitle(R.string.chat_title)
+        requireActivity().setTitle(R.string.app_name)
         ChatServer.connectionRequest.observe(viewLifecycleOwner, connectionRequestObserver)
         ChatServer.deviceConnection.observe(viewLifecycleOwner, deviceConnectionObserver)
         ChatServer.messages.observe(viewLifecycleOwner, messageObserver)

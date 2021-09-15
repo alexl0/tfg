@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_find_new_device"
             app:destination="@id/deviceListFragment" />
+        <action
+            android:id="@+id/action_bluetoothChatFragment_to_buyVouchersFragment"
+            app:destination="@id/buyVouchersFragment" />
     </fragment>
     <fragment
         android:id="@+id/deviceListFragment"
@@ -34,4 +37,9 @@
             android:id="@+id/action_check_location_permissions"
             app:destination="@id/locationRequiredFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/buyVouchersFragment"
+        android:name="com.example.passengerapp.buyVouchersFragment"
+        android:label="fragment_buy_vouchers"
+        tools:layout="@layout/fragment_buy_vouchers" />
 </navigation>

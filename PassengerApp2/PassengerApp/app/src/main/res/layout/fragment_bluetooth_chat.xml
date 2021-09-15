@@ -19,11 +19,25 @@
             android:text="@string/no_connected_device_message"/>
 
         <Button
+            android:id="@+id/buyVouchers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/buy_vouchers_prompt"/>
+        <Button
+            android:id="@+id/myVouchers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/my_vouchers_prompt"/>
+
+        <Button
             android:id="@+id/connect_devices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/connect_device_prompt"/>
+
     </LinearLayout>
 
     <LinearLayout
