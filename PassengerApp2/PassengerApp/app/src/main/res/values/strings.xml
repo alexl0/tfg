@@ -22,7 +22,6 @@
     <string name="scanning_header">Choose a device to chat with:</string>
 
 
-
     <string name="settings">Settings</string>
     <string name="about">About</string>
     <string name="logout">Log out</string>
@@ -41,15 +40,8 @@
     <string name="numTrips">Number of trips: </string>
     <string name="totalPrice">Total price: </string>
     <string name="pay">Pay</string>
-
-
-
-
-
-
-
-
-
+    <string name="zones">Zones</string>
+    <string name="trips">Trips</string>
 
 
 
@@ -75,5 +67,7 @@
         <item>40</item>
         <item>50</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

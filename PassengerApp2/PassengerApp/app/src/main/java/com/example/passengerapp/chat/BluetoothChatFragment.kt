@@ -80,6 +80,10 @@ class BluetoothChatFragment : Fragment() {
             findNavController().navigate(R.id.action_bluetoothChatFragment_to_buyVouchersFragment)
         }
 
+        binding.myVouchers.setOnClickListener {
+            findNavController().navigate(R.id.action_bluetoothChatFragment_to_myVouchersFragment)
+        }
+
         return binding.root
     }
 

@@ -41,4 +41,6 @@
     <string name="numTrips">Número de viajes: </string>
     <string name="totalPrice">Total a pagar: </string>
     <string name="pay">Pagar</string>
+    <string name="zones">Zonas</string>
+    <string name="trips">Viajes</string>
 </resources>
