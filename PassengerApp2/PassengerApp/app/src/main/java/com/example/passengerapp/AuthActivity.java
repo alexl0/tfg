@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -227,10 +228,18 @@ public class AuthActivity extends AppCompatActivity {
      * @param provider for example, google, twitter, github, email and passwd, facebook, etc
      */
     private void openMainActivity(FirebaseUser user, MainActivity.ProviderType provider) {
+
+        //Store in the singleton so other classes can access the user and provider withe ease
         SingletonClass.get().getHashObjects().put("user", user);
-        //System.out.println(SingletonClass.get().getHashObjects().get("user").toString());
         SingletonClass.get().getHashObjects().put("provider", provider);
-        //System.out.println(SingletonClass.get().getHashObjects().get("provider"));
+
+        //Data saving (so when the app is closed, the user does not have to re enter the credentials again)
+        SharedPreferences.Editor prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit();
+        prefs.putString("email", user.getEmail().toString());
+        prefs.putString("provider", provider.name());
+        prefs.apply();
+
+        //Change to the MainActivity screen
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
