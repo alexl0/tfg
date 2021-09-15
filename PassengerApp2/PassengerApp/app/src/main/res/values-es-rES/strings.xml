@@ -43,4 +43,6 @@
     <string name="pay">Pagar</string>
     <string name="zones">Zonas</string>
     <string name="trips">Viajes</string>
+    <string name="tripsBought">Viajes comprados correctamente</string>
+    <string name="ok">Aceptar</string>
 </resources>

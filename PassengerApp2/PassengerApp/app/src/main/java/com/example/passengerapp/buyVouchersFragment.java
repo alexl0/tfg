@@ -3,6 +3,7 @@ package com.example.passengerapp;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -13,10 +14,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -56,6 +59,7 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
     Spinner spinnerZones;
     Spinner spinnerTrips;
     Button payButton;
+    ConstraintLayout parent;
 
     /**
      * Use this factory method to create a new instance of
@@ -102,6 +106,7 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
         spinnerZones = view.findViewById(R.id.spinnerNumZonesBuy);
         spinnerTrips = view.findViewById(R.id.spinnerNumTripsBuy);
         payButton = view.findViewById(R.id.payButton);
+        parent = view.findViewById(R.id.parentConstraintLayout);
 
         //Set up payButton
         payButton.setOnClickListener(new View.OnClickListener() {
@@ -153,6 +158,9 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
 
                                 //Add/update the user to/from the database
                                 db.collection("users").document(currentUserEmail).set(userHash);
+
+                                showSnackBar();
+
                             } else {
                                 Log.d("INFO", "No such document");
                             }
@@ -166,7 +174,6 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
 
             }
         });
-
 
         return view;
     }
@@ -214,6 +221,18 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
         //System.out.println("Nothing selected");
+    }
+
+    //Mostrar Snackbar (como un cuadro de dialogo abajo tipo system.out.println o system.out)
+    private void showSnackBar() {
+        Snackbar.make(parent, getText(R.string.tripsBought), Snackbar.LENGTH_INDEFINITE)
+                .setAction(getText(R.string.ok), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Toast.makeText(getActivity(), getText(R.string.ok), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .show();
     }
 
 }
