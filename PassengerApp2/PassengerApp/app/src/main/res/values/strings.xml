@@ -15,6 +15,7 @@
     <string name="chat_deny_button">No</string>
     <string name="chat_confirm_button">Yes</string>
     <string name="no_connected_device_message">Not connected to a device</string>
+    <string name="connected_device_message">Connected to: </string>
     <string name="connect_device_prompt">Connect with nearby devices</string>
     <string name="send_message_button">Send Message</string>
     <string name="chatting_with_device">Chatting with %1$s</string>

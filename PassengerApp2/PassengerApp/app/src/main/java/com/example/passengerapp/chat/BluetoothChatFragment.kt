@@ -101,10 +101,11 @@ class BluetoothChatFragment : Fragment() {
     }
 
     private fun chatWith(device: BluetoothDevice) {
-        binding.connectedContainer.visible()
-        binding.notConnectedContainer.gone()
+        //binding.connectedContainer.visible()
+        //binding.notConnectedContainer.gone()
+        binding.connectDevices.isEnabled = false;
 
-        val chattingWithString = resources.getString(R.string.chatting_with_device, device.address)
+        /*val chattingWithString = resources.getString(R.string.chatting_with_device, device.address)
         binding.connectedDeviceName.text = chattingWithString
         binding.sendMessage.setOnClickListener {
             val message = binding.messageText.text.toString()
@@ -114,13 +115,18 @@ class BluetoothChatFragment : Fragment() {
                 // clear message
                 binding.messageText.setText("")
             }
-        }
+        }*/
+        val chattingWithString = resources.getString(R.string.connected_device_message) + device.name
+        binding.connectDeviceMessage.text = chattingWithString
+
     }
 
     private fun showDisconnected() {
         hideKeyboard()
-        binding.notConnectedContainer.visible()
+        //binding.notConnectedContainer.visible()
         binding.connectedContainer.gone()
+        binding.connectDeviceMessage.text = resources.getString(R.string.no_connected_device_message)
+        binding.connectDevices.isEnabled = true;
     }
 
     private fun hideKeyboard() {
