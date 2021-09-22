@@ -125,13 +125,13 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
+
 
                                 // Create a new user with the updated data
                                 Map<String, Object> userHash = new HashMap<>();
                                 for(int i=1; i<=7; i++){
                                     //Si el usuario ya tiene viajes para la zona i
-                                    if(document.getData().get("tripsZone"+i)!=null){
+                                    if(document.exists() && document.getData().get("tripsZone"+i)!=null){
                                         //Y ademas es la que ha seleccionado
                                         if(i==numZonesSelected){
                                             //Se le suman
@@ -160,10 +160,6 @@ public class buyVouchersFragment extends Fragment implements AdapterView.OnItemS
                                 db.collection("users").document(currentUserEmail).set(userHash);
 
                                 showSnackBar();
-
-                            } else {
-                                Log.d("INFO", "No such document");
-                            }
                         } else {
                             Log.d("ERROR", "get failed with ", task.getException());
                         }
