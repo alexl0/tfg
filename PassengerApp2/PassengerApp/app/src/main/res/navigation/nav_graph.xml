@@ -23,7 +23,11 @@
     <fragment
         android:id="@+id/deviceListFragment"
         android:name="com.example.passengerapp.scan.DeviceScanFragment"
-        android:label="DeviceListFragment" />
+        android:label="DeviceListFragment" >
+        <action
+            android:id="@+id/action_deviceListFragment_to_bluetoothChatFragment"
+            app:destination="@id/bluetoothChatFragment" />
+    </fragment>
     <fragment
         android:id="@+id/locationRequiredFragment"
         android:name="com.example.passengerapp.bluetooth.LocationRequiredFragment"
