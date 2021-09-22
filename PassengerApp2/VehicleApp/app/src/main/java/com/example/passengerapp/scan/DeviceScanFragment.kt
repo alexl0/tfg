@@ -103,7 +103,7 @@ class DeviceScanFragment : Fragment() {
     }
 
     private fun showNoDevices() {
-        binding.noDevices.visible()
+        //nodevicebinding.noDevices.visible()
 
         binding.deviceList.gone()
         binding.scanning.gone()

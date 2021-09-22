@@ -34,11 +34,13 @@
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/fragment_my_vouchers.xml" value="0.41875" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/layout/item_device.xml" value="0.1" />
         <entry key="..\:/git/tfg/PassengerApp2/PassengerApp/app/src/main/res/menu/main_menu.xml" value="0.209375" />
+        <entry key="..\:/git/tfg/PassengerApp2/VehicleApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/git/tfg/PassengerApp2/VehicleApp/app/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.209375" />
+        <entry key="..\:/git/tfg/PassengerApp2/VehicleApp/app/src/main/res/layout/fragment_device_scan.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15_PREVIEW" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

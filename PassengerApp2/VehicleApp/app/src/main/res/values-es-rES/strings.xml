@@ -19,7 +19,7 @@
     <string name="send_message_button">Send Message</string>
     <string name="chatting_with_device">Chatting with %1$s</string>
     <string name="your_device_address">Your device address:</string>
-    <string name="scanning_header">Choose a device to chat with:</string>
+    <string name="scanning_header">This device is discoverable</string>
 
 
 
@@ -39,10 +39,12 @@
     <string name="my_vouchers_prompt">Mis bonos</string>
     <string name="numzones">Número de zonas: </string>
     <string name="numTrips">Número de viajes: </string>
-    <string name="totalPrice">Total a pagar: </string>
+    <string name="totalPrice">Nombre actual: </string>
     <string name="pay">Pagar</string>
     <string name="zones">Zonas</string>
     <string name="trips">Viajes</string>
     <string name="tripsBought">Viajes comprados correctamente</string>
     <string name="ok">Aceptar</string>
+    <string name="changeName">Cambiar nombre</string>
+    <string name="changeNameHint">Nuevo nombre</string>
 </resources>

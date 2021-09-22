@@ -4,7 +4,7 @@
     <string name="app_name" translatable="false">VehicleApp</string>
     <string name="no_devices_found">No BLE devices found</string>
     <string name="chat_title">Chat</string>
-    <string name="device_list_title">Pair with new device</string>
+    <string name="device_list_title">VehicleApp</string>
     <string name="location_required_error">The location permission is required to support Bluetooth Low Energy communication</string>
     <string name="grant_permission_prompt">Grant Location Permission</string>
     <string name="active_scan_message">Scanning for devices</string>
@@ -19,7 +19,7 @@
     <string name="send_message_button">Send Message</string>
     <string name="chatting_with_device">Chatting with %1$s</string>
     <string name="your_device_address">Your device address:</string>
-    <string name="scanning_header">Choose a device to chat with:</string>
+    <string name="scanning_header">This device is discoverable</string>
 
 
     <string name="settings">Settings</string>
@@ -38,12 +38,14 @@
     <string name="my_vouchers_prompt">My vouchers</string>
     <string name="numzones">Number of zones: </string>
     <string name="numTrips">Number of trips: </string>
-    <string name="totalPrice">Total price: </string>
+    <string name="totalPrice">Current name: </string>
     <string name="pay">Pay</string>
     <string name="zones">Zones</string>
     <string name="trips">Trips</string>
     <string name="tripsBought">Trips successfully bought</string>
     <string name="ok">Ok</string>
+    <string name="changeName">Change Name</string>
+    <string name="changeNameHint">New name</string>
 
 
 
