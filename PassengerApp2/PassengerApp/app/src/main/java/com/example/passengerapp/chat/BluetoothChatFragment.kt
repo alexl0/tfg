@@ -58,6 +58,14 @@ class BluetoothChatFragment : Fragment() {
             }
             is DeviceConnectionState.Disconnected -> {
                 showDisconnected()
+
+                /**
+                 * Restart server.
+                 * Because if not, when disconecting the vehicle app and connecting it again, it remains conected.
+                 * It's not good because the passenger could use the buse once and once again
+                 */
+                ChatServer.stopServer()
+                ChatServer.startServer(requireActivity().application)
             }
         }
 
