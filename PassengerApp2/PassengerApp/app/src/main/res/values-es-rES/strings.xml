@@ -45,5 +45,6 @@
     <string name="zones">Zonas</string>
     <string name="trips">Viajes</string>
     <string name="tripsBought">Viajes comprados correctamente</string>
+    <string name="tripBought">Viaje comprado correctamente</string>
     <string name="ok">Aceptar</string>
 </resources>

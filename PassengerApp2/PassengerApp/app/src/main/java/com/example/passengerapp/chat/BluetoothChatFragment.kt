@@ -19,10 +19,30 @@ import com.example.passengerapp.bluetooth.ChatServer
 import com.example.passengerapp.databinding.FragmentBluetoothChatBinding
 import com.example.passengerapp.gone
 import com.example.passengerapp.visible
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.DocumentSnapshot
+
+import androidx.annotation.NonNull
+
+import com.google.android.gms.tasks.OnCompleteListener
+
+import com.google.firebase.firestore.DocumentReference
+
+import com.example.passengerapp.SingletonClass
+import com.google.android.material.snackbar.Snackbar
+
+import com.google.firebase.auth.FirebaseUser
+
+
+
+
+
+
 
 private const val TAG = "BluetoothChatFragment"
 
 class BluetoothChatFragment : Fragment() {
+
 
     private var _binding: FragmentBluetoothChatBinding? = null
     // this property is valid between onCreateView and onDestroyView.
@@ -118,7 +138,6 @@ class BluetoothChatFragment : Fragment() {
         }*/
         val chattingWithString = resources.getString(R.string.connected_device_message) + device.name
         binding.connectDeviceMessage.text = chattingWithString
-
     }
 
     private fun showDisconnected() {
