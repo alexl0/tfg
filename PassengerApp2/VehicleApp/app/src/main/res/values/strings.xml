@@ -38,14 +38,18 @@
     <string name="my_vouchers_prompt">My vouchers</string>
     <string name="numzones">Number of zones: </string>
     <string name="numTrips">Number of trips: </string>
+    <string name="numPassengers">Number of passengers: </string>
     <string name="totalPrice">Current name: </string>
+    <string name="currentPlate">Current plate: </string>
     <string name="pay">Pay</string>
     <string name="zones">Zones</string>
     <string name="trips">Trips</string>
     <string name="tripsBought">Trips successfully bought</string>
     <string name="ok">Ok</string>
-    <string name="changeName">Change Name</string>
+    <string name="changeName">Change name</string>
+    <string name="changePlate">Change plate</string>
     <string name="changeNameHint">New name</string>
+    <string name="changePlateHint">New plate</string>
 
 
 
