@@ -108,7 +108,7 @@ class DeviceScanFragment : Fragment(), AdapterView.OnItemSelectedListener {
         binding.buttonChangeName.setOnClickListener(View.OnClickListener {
             //Validaciones
             var textNewName = binding.textInputEditTextNewName.text.toString()
-            if(textNewName.length>=1 && textNewName.length<=15 && !p.matcher(textNewName).find()){
+            if(textNewName.length>=1 && textNewName.length<=15 && !p.matcher(textNewName).find() && !textNewName.contains("zones", ignoreCase = true)){
                 db.collection("plates").document(currentUserEmail).set(
                     hashMapOf("name" to textNewName + " " + zones + "zones",
                         "plate" to plate)

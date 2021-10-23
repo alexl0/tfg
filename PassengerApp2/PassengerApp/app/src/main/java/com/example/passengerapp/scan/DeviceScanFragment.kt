@@ -55,10 +55,10 @@ class DeviceScanFragment : Fragment() {
         //Set up database
         db = FirebaseFirestore.getInstance()
 
-        //The name of the vehicle must be an array of characters finished by a number and 'Z'
-        //For example: Bus L5 3Z (It's a bus, it's from line 5 and it's a 3 zones bus)
+        //The name of the vehicle must be an array of characters finished by a number and 'zones'
+        //For example: Bus L5 3zones (It's a bus, it's from line 5 and it's a 3 zones bus)
         val str: String = device.name.toString()
-        val numberOnly = str.substring(str.length -2, str.length-1)
+        val numberOnly = str.substring(str.length -6, str.length-5)
         val numZonesSelected = numberOnly.toInt()
 
         val numTripsSelected = -1

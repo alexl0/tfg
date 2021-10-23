@@ -20,7 +20,7 @@
     <string name="send_message_button">Send Message</string>
     <string name="chatting_with_device">Chatting with %1$s</string>
     <string name="your_device_address">Your device address:</string>
-    <string name="scanning_header">Choose a device to chat with:</string>
+    <string name="scanning_header">Choose a device to travel with:</string>
 
 
 
@@ -47,4 +47,5 @@
     <string name="tripsBought">Viajes comprados correctamente</string>
     <string name="tripBought">Viaje comprado correctamente</string>
     <string name="ok">Aceptar</string>
+    <string name="notEnoughVoyages">No hay suficientes viajes para esa zona</string>
 </resources>

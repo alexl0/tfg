@@ -187,12 +187,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/needToRestart" />
+
                 <TextView
                     android:id="@+id/needToRestartAnswerTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/needToRestartAnswerNo" />
+                    android:text="@string/needToRestartAnswerNo"
+                    android:textColor="#00FF04" />
             </LinearLayout>
         </LinearLayout>
 
