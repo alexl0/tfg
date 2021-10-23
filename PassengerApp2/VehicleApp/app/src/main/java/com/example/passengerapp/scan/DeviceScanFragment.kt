@@ -7,23 +7,27 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.passengerapp.*
 import com.example.passengerapp.R
 import com.example.passengerapp.bluetooth.ChatServer
 import com.example.passengerapp.databinding.FragmentDeviceScanBinding
-import com.example.passengerapp.exhaustive
-import com.example.passengerapp.gone
 import com.example.passengerapp.scan.DeviceScanViewState.*
-import com.example.passengerapp.visible
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.*
+
 
 private const val TAG = "DeviceScanFragment"
 const val GATT_KEY = "gatt_bundle_key"
 
 class DeviceScanFragment : Fragment() {
+
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private var _binding: FragmentDeviceScanBinding? = null
 
@@ -63,6 +67,46 @@ class DeviceScanFragment : Fragment() {
         binding.deviceList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = deviceScanAdapter
+        }
+
+        /**
+         * Get current user
+         */
+        val currentUser:FirebaseUser = SingletonClass.get().hashObjects["user"] as FirebaseUser
+        val currentUserEmail: String = currentUser!!.email as String
+
+        /**
+         * Set up listeners for the 2 buttons
+         */
+        binding.buttonChangeName.setOnClickListener(View.OnClickListener {
+            db.collection("plates").document(currentUserEmail).set(
+                hashMapOf("name" to binding.textInputEditTextNewName.text.toString())
+            )
+        })
+
+        binding.buttonChangePlate.setOnClickListener(View.OnClickListener {
+            db.collection("plates").document(currentUserEmail).set(
+                hashMapOf("plate" to binding.textInputEditTextNewPlate.text.toString())
+            )
+        })
+
+        /**
+         * Add listener to database changes
+         */
+        val docRef = db.collection("plates").document(currentUserEmail)
+        docRef.addSnapshotListener { snapshot, e ->
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e)
+                return@addSnapshotListener
+            }
+
+            if (snapshot != null && snapshot.exists()) {
+                Log.d(TAG, "Current data: ${snapshot.data}")
+                val stringData = snapshot.data.toString()
+                binding.currentPlateTextView.setText(binding.currentPlateTextView.text.toString() + " " + stringData.substring(stringData.lastIndexOf("=") + 1, stringData.length - 1))
+            } else {
+                Log.d(TAG, "Current data: null")
+            }
         }
 
         return binding.root
