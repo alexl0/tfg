@@ -175,6 +175,25 @@
                     android:layout_weight="1"
                     android:text="@string/currentPlate" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100px"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/needToRestart" />
+                <TextView
+                    android:id="@+id/needToRestartAnswerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/needToRestartAnswerNo" />
+            </LinearLayout>
         </LinearLayout>
 
 

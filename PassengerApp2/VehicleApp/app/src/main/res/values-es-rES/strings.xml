@@ -51,4 +51,8 @@
     <string name="changePlate">Cambiar matrícula</string>
     <string name="changeNameHint">Nuevo nombre</string>
     <string name="changePlateHint">Nueva matrícula</string>
+    <string name="btChangeRestart">Nombre BT cambiado. Por favor resetea la app.</string>
+    <string name="needToRestart">Tienes que resetear la aplicación: </string>
+    <string name="needToRestartAnswerYes">SI</string>
+    <string name="needToRestartAnswerNo">NO</string>
 </resources>

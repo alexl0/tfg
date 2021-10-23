@@ -50,6 +50,10 @@
     <string name="changePlate">Change plate</string>
     <string name="changeNameHint">New name</string>
     <string name="changePlateHint">New plate</string>
+    <string name="btChangeRestart">BT name changed. Please restart the app.</string>
+    <string name="needToRestart">You need to restart the app: </string>
+    <string name="needToRestartAnswerYes">YES</string>
+    <string name="needToRestartAnswerNo">NO</string>
 
 
 
