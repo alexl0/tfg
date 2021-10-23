@@ -31,6 +31,9 @@ class DeviceScanFragment : Fragment() {
 
     private var _binding: FragmentDeviceScanBinding? = null
 
+    private var name: String? = ""
+    private var plate: String? = ""
+
     // This property is only valid between onCreateView and onDestroyView.
     private val binding
         get() = _binding!!
@@ -80,13 +83,16 @@ class DeviceScanFragment : Fragment() {
          */
         binding.buttonChangeName.setOnClickListener(View.OnClickListener {
             db.collection("plates").document(currentUserEmail).set(
-                hashMapOf("name" to binding.textInputEditTextNewName.text.toString())
+                hashMapOf("name" to binding.textInputEditTextNewName.text.toString(),
+                          "plate" to plate)
             )
         })
 
         binding.buttonChangePlate.setOnClickListener(View.OnClickListener {
             db.collection("plates").document(currentUserEmail).set(
-                hashMapOf("plate" to binding.textInputEditTextNewPlate.text.toString())
+                hashMapOf(
+                    "name" to name,
+                    "plate" to binding.textInputEditTextNewPlate.text.toString())
             )
         })
 
@@ -101,9 +107,19 @@ class DeviceScanFragment : Fragment() {
             }
 
             if (snapshot != null && snapshot.exists()) {
-                Log.d(TAG, "Current data: ${snapshot.data}")
-                val stringData = snapshot.data.toString()
-                binding.currentPlateTextView.setText(binding.currentPlateTextView.text.toString() + " " + stringData.substring(stringData.lastIndexOf("=") + 1, stringData.length - 1))
+                val snapData = snapshot.data
+                Log.d(TAG, "Current data: ${snapData}")
+
+                //Assign name
+                if(snapData?.get("name") !=null && snapData.get("name")!="")
+                    name=snapData.get("name").toString()
+
+                //Assign plate
+                if(snapData?.get("plate") !=null && snapData.get("plate")!="")
+                    plate=snapData.get("plate").toString()
+
+                binding.currentPlateTextView.setText(getString(R.string.currentPlate) + " " + plate)
+                binding.currentNameTextView.setText(getString(R.string.totalPrice) + " " + name)
             } else {
                 Log.d(TAG, "Current data: null")
             }
