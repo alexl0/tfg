@@ -55,4 +55,6 @@
     <string name="needToRestart">Tienes que resetear la aplicación: </string>
     <string name="needToRestartAnswerYes">SI</string>
     <string name="needToRestartAnswerNo">NO</string>
+    <string name="incorrectNameString">Texto no válido para un nombre</string>
+    <string name="incorrectPlateString">Texto no válido para una matrícula</string>
 </resources>

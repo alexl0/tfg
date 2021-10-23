@@ -22,27 +22,32 @@ import com.google.firebase.firestore.*
 import android.bluetooth.BluetoothAdapter
 import android.os.Handler
 import android.widget.Toast
-import android.app.AlarmManager
 
-import android.app.PendingIntent
-import android.content.Context
-
-import android.content.Intent
 import android.graphics.Color
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import com.google.common.primitives.UnsignedBytes.toInt
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 
 private const val TAG = "DeviceScanFragment"
 const val GATT_KEY = "gatt_bundle_key"
 
-class DeviceScanFragment : Fragment() {
+class DeviceScanFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private var _binding: FragmentDeviceScanBinding? = null
 
     private var name: String? = ""
+    private var zones: String? = ""
     private var plate: String? = ""
     private var bluetoothAdapter: BluetoothAdapter? = null
+    private var firstTimeInSpinner = 1
+
+    lateinit var currentUser: FirebaseUser
+    lateinit var currentUserEmail: String
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding
@@ -87,28 +92,45 @@ class DeviceScanFragment : Fragment() {
          */
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+        //Set up spinners
+        setupSpinners()
+
         /**
          * Get current user
          */
-        val currentUser:FirebaseUser = SingletonClass.get().hashObjects["user"] as FirebaseUser
-        val currentUserEmail: String = currentUser!!.email as String
+        currentUser = SingletonClass.get().hashObjects["user"] as FirebaseUser
+        currentUserEmail = currentUser!!.email as String
 
         /**
          * Set up listeners for the 2 buttons
          */
+        val p: Pattern = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE)
         binding.buttonChangeName.setOnClickListener(View.OnClickListener {
-            db.collection("plates").document(currentUserEmail).set(
-                hashMapOf("name" to binding.textInputEditTextNewName.text.toString(),
-                          "plate" to plate)
-            )
+            //Validaciones
+            var textNewName = binding.textInputEditTextNewName.text.toString()
+            if(textNewName.length>=1 && textNewName.length<=15 && !p.matcher(textNewName).find()){
+                db.collection("plates").document(currentUserEmail).set(
+                    hashMapOf("name" to textNewName + " " + zones + "zones",
+                        "plate" to plate)
+                )
+            }else{
+                Toast.makeText(requireActivity(), getText(R.string.incorrectNameString), Toast.LENGTH_SHORT).show()
+            }
+            binding.textInputEditTextNewName.setText("")
         })
 
         binding.buttonChangePlate.setOnClickListener(View.OnClickListener {
-            db.collection("plates").document(currentUserEmail).set(
-                hashMapOf(
-                    "name" to name,
-                    "plate" to binding.textInputEditTextNewPlate.text.toString())
-            )
+            var textNewPlate = binding.textInputEditTextNewPlate.text.toString()
+            if(textNewPlate.length>=1 && textNewPlate.length<=15 && !p.matcher(textNewPlate).find()){
+                db.collection("plates").document(currentUserEmail).set(
+                    hashMapOf(
+                        "name" to name,
+                        "plate" to textNewPlate)
+                )
+            } else{
+                Toast.makeText(requireActivity(), getText(R.string.incorrectPlateString), Toast.LENGTH_SHORT).show()
+            }
+            binding.textInputEditTextNewPlate.setText("")
         })
 
         /**
@@ -195,6 +217,20 @@ class DeviceScanFragment : Fragment() {
         return binding.root
     }
 
+    private fun setupSpinners() {
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        val adapter = ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.zonesArray, android.R.layout.simple_spinner_item
+        )
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        binding.spinnerNumZonesVehicle.adapter = adapter
+        //Add listener to the spinners
+        binding.spinnerNumZonesVehicle.onItemSelectedListener = this
+    }
+
     override fun onStart() {
         super.onStart()
         requireActivity().setTitle(R.string.device_list_title)
@@ -252,5 +288,43 @@ class DeviceScanFragment : Fragment() {
 
     private fun showAdvertisingError() {
         showError("BLE advertising is not supported on this device")
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        zones=binding.spinnerNumZonesVehicle.getSelectedItem().toString()
+
+        /**
+         * Change name
+         */
+
+        //It already has zones
+        if(name?.takeLast(5)=="zones"){
+            var index = name!!.length-6
+            if(firstTimeInSpinner==0){
+                var nameTemp = name?.substring(0, index) + zones + name?.substring(index + 1)
+                db.collection("plates").document(currentUserEmail).set(
+                    hashMapOf(
+                        "name" to nameTemp,
+                        "plate" to plate)
+                )
+            } else{
+                binding.spinnerNumZonesVehicle.setSelection(name!!.substring(index, index+1).toInt()-1)
+            }
+        }
+
+        //It doesnt have zones yet
+        else{
+            db.collection("plates").document(currentUserEmail).set(
+                hashMapOf(
+                    "name" to name + " " + zones + "zones",
+                    "plate" to plate)
+            )
+        }
+
+        firstTimeInSpinner=0
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        //Nothing happens
     }
 }

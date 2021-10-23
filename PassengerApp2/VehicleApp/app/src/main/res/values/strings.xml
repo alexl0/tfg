@@ -54,6 +54,8 @@
     <string name="needToRestart">You need to restart the app: </string>
     <string name="needToRestartAnswerYes">YES</string>
     <string name="needToRestartAnswerNo">NO</string>
+    <string name="incorrectNameString">Invalid string for a name</string>
+    <string name="incorrectPlateString">Invalid string for a plate</string>
 
 
 
