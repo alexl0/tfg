@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -80,11 +81,19 @@ class DeviceScanFragment : Fragment() {
                     if (document.exists() && document.data!!["tripsZone$i"] != null) {
                         //Y ademas es la que ha seleccionado
                         if (i == numZonesSelected) {
-                            //Se le suman
-                            val currentTripsBefore =
-                                (document.data!!["tripsZone$numZonesSelected"] as Long?)!!.toInt()
-                            userHash["tripsZone$numZonesSelected"] =
-                                numTripsSelected + currentTripsBefore
+                            if(document.data!!["tripsZone$i"].toString().toInt()>=1){
+                                //Se le suman
+                                val currentTripsBefore =
+                                    (document.data!!["tripsZone$numZonesSelected"] as Long?)!!.toInt()
+                                userHash["tripsZone$numZonesSelected"] =
+                                    numTripsSelected + currentTripsBefore
+                                //Se hace lo que se tiene que hacer cuando se tienen viajes
+                                //"Connect" with the bus/train
+                                ChatServer.setCurrentChatConnection(device)
+                            } else{
+                                //TODO Mostrar un mensaje al usuario indicando que no tiene bonos suficientes
+                                //Toast.makeText(requireActivity(), getText(R.string.notEnoughVoyages), Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             //Se le ponen los viajes que ya tenga
                             val currentTripsBefore =
@@ -106,9 +115,6 @@ class DeviceScanFragment : Fragment() {
                 Log.d("ERROR", "get failed with ", task.exception)
             }
         }
-
-
-        ChatServer.setCurrentChatConnection(device)
         // navigate back to chat fragment
         findNavController().popBackStack()
     }

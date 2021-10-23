@@ -3,6 +3,7 @@ package com.example.passengerapp.chat
 
 import android.bluetooth.BluetoothDevice
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -146,6 +147,7 @@ class BluetoothChatFragment : Fragment() {
         }*/
         val chattingWithString = resources.getString(R.string.connected_device_message) + device.name
         binding.connectDeviceMessage.text = chattingWithString
+        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
     }
 
     private fun showDisconnected() {
@@ -153,6 +155,7 @@ class BluetoothChatFragment : Fragment() {
         //binding.notConnectedContainer.visible()
         binding.connectedContainer.gone()
         binding.connectDeviceMessage.text = resources.getString(R.string.no_connected_device_message)
+        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#ff0000"))
         binding.connectDevices.isEnabled = true;
     }
 
