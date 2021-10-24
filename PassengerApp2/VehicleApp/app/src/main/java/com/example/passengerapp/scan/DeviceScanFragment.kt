@@ -27,6 +27,8 @@ import android.graphics.Color
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.google.common.primitives.UnsignedBytes.toInt
+import com.jakewharton.processphoenix.ProcessPhoenix
+import java.lang.Exception
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -98,8 +100,13 @@ class DeviceScanFragment : Fragment(), AdapterView.OnItemSelectedListener {
         /**
          * Get current user
          */
-        currentUser = SingletonClass.get().hashObjects["user"] as FirebaseUser
-        currentUserEmail = currentUser!!.email as String
+        var currentUserTemp: FirebaseUser? = SingletonClass.get().hashObjects["user"] as FirebaseUser
+        if(currentUserTemp!=null){
+            currentUser = currentUserTemp
+            currentUserEmail = currentUser!!.email as String
+        } else{
+
+        }
 
         /**
          * Set up listeners for the 2 buttons
@@ -179,6 +186,15 @@ class DeviceScanFragment : Fragment(), AdapterView.OnItemSelectedListener {
                                                 Toast.makeText(requireActivity(), getText(R.string.btChangeRestart), Toast.LENGTH_SHORT).show()
                                                 binding.needToRestartAnswerTextView.setText(R.string.needToRestartAnswerYes)
                                                 binding.needToRestartAnswerTextView.setTextColor(Color.parseColor("#ff1100"));
+                                                //Restart the app
+                                                try{
+                                                    ProcessPhoenix.triggerRebirth(context);
+                                                } catch(e:IllegalStateException){
+                                                    //The IllegalStateException is expected, everithing is working fine
+                                                    throw e //The application must crash to restart completely. It's a trick
+                                                } catch (e:Exception){
+                                                    Log.d(TAG, "Something went wrong when restarting the app.")
+                                                }
                                             }
                                         }
                                         if (sNewName.equals(
