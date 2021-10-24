@@ -224,7 +224,7 @@ class DeviceScanFragment : Fragment(), AdapterView.OnItemSelectedListener {
                     plate=snapData.get("plate").toString()
 
                 binding.currentPlateTextView.setText(getString(R.string.currentPlate) + " " + plate)
-                binding.currentNameTextView.setText(getString(R.string.totalPrice) + " " + name)
+                binding.currentNameTextView.setText(getString(R.string.totalPrice) + " " + name!!.substring(0,name!!.length-7))
             } else {
                 Log.d(TAG, "Current data: null")
             }

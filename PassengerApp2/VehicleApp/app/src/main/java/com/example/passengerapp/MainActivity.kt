@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //return super.onCreateOptionsMenu(menu);
         val inflater = menuInflater
-        inflater.inflate(R.menu.main_menu, menu)
+        //inflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
