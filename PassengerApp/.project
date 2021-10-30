@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>PassengerApp</name>
-	<comment>Project PassengerApp created by Buildship.</comment>
+	<name>BluetoothLeChat</name>
+	<comment>Project BluetoothLeChat created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1630864773979</id>
+			<id>1630591648208</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

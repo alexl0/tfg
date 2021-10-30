@@ -2,23 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="@string/settings"
-        android:id="@+id/settings_menu"
-        android:icon="@drawable/ic_settingsdark"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:title="@string/about"
-        android:id="@+id/about_menu"
-        android:icon="@drawable/ic_aboutdark"
-        app:showAsAction="ifRoom"/>
-    <item
         android:title="@string/logout"
         android:id="@+id/logout_menu"
-        android:icon="@drawable/ic_backarrow"
-        app:showAsAction="never"/>
-    <item
-        android:title="@string/userInfo"
-        android:id="@+id/userInfo_menu"
-        android:icon="@drawable/ic_userinfodark"
         app:showAsAction="never"/>
 </menu>
