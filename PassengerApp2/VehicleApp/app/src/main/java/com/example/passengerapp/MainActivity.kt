@@ -40,17 +40,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //return super.onCreateOptionsMenu(menu);
         val inflater = menuInflater
-        //inflater.inflate(R.menu.main_menu, menu)
+        inflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     //Top bar navigation listener
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.settings_menu -> {
-                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show()
-                return true
-            }
             R.id.logout_menu -> {
                 //Remove data saved
                 val prefs =
