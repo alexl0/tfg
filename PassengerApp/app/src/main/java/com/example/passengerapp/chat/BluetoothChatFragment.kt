@@ -33,11 +33,8 @@ import com.example.passengerapp.SingletonClass
 import com.google.android.material.snackbar.Snackbar
 
 import com.google.firebase.auth.FirebaseUser
-
-
-
-
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 private const val TAG = "BluetoothChatFragment"
@@ -145,7 +142,9 @@ class BluetoothChatFragment : Fragment() {
                 binding.messageText.setText("")
             }
         }*/
-        val chattingWithString = resources.getString(R.string.connected_device_message) + device.name
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        val chattingWithString = resources.getString(R.string.connected_device_message) + device.name + "\n" + currentDate
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
     }
