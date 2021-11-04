@@ -165,9 +165,17 @@ class DeviceScanFragment : Fragment() {
     }
 
     private fun showResults(scanResults: Map<String, BluetoothDevice>) {
-        if (scanResults.isNotEmpty()) {
+
+        //Borrar los dispositivos de los pasajeros para que no aparezcan al buscar
+        val nuevosResultados: MutableList<BluetoothDevice> = ArrayList()
+        for (i in scanResults.values.toList()) {
+            if(i.getName()!=null && i.getName()!="PassengerAppDevice")
+                nuevosResultados.add(i)
+        }
+
+        if (nuevosResultados.isNotEmpty()) {
             binding.deviceList.visible()
-            deviceScanAdapter.updateItems(scanResults.values.toList())
+            deviceScanAdapter.updateItems(nuevosResultados.toList())
 
             binding.scanning.gone()
             binding.noDevices.gone()

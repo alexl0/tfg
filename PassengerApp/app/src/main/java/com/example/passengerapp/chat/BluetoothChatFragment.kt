@@ -1,6 +1,7 @@
 
 package com.example.passengerapp.chat
 
+import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.Context
 import android.graphics.Color
@@ -46,6 +47,8 @@ class BluetoothChatFragment : Fragment() {
     // this property is valid between onCreateView and onDestroyView.
     private val binding: FragmentBluetoothChatBinding
         get() = _binding!!
+
+    private var bluetoothAdapter: BluetoothAdapter? = null
 
     private val deviceConnectionObserver = Observer<DeviceConnectionState> { state ->
         when(state) {
@@ -96,6 +99,12 @@ class BluetoothChatFragment : Fragment() {
         binding.messages.layoutManager = LinearLayoutManager(context)
         binding.messages.adapter = adapter
 
+        /**
+         * Set up bluetooth adapter to change bluetooth name
+         */
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        changeDeviceName()
+
         showDisconnected()
 
         binding.connectDevices.setOnClickListener {
@@ -111,6 +120,18 @@ class BluetoothChatFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun changeDeviceName() {
+        Log.i(
+            "BT",
+            "localdevicename : " + bluetoothAdapter!!.name + " localdeviceAddress : " + bluetoothAdapter!!.address
+        )
+        bluetoothAdapter!!.name = "PassengerAppDevice"
+        Log.i(
+            "BT",
+            "localdevicename : " + bluetoothAdapter!!.name + " localdeviceAddress : " + bluetoothAdapter!!.address
+        )
     }
 
     override fun onStart() {
