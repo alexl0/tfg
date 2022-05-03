@@ -162,7 +162,7 @@ public class buyVouchersFragment extends Fragment {
                 YOUR_CLIENT_ID,
                 Environment.SANDBOX,
                 "com.example.passengerapp://paypalpay",
-                CurrencyCode.USD,
+                CurrencyCode.EUR,
                 UserAction.PAY_NOW
         );
         PayPalCheckout.setConfig(config);
@@ -175,7 +175,7 @@ public class buyVouchersFragment extends Fragment {
                                 new PurchaseUnit.Builder()
                                         .amount(
                                                 new Amount.Builder()
-                                                        .currencyCode(CurrencyCode.USD)
+                                                        .currencyCode(CurrencyCode.EUR)
                                                         .value("9.00")
                                                         .build()
                                         )
@@ -314,7 +314,7 @@ public class buyVouchersFragment extends Fragment {
                                         new PurchaseUnit.Builder()
                                                 .amount(
                                                         new Amount.Builder()
-                                                                .currencyCode(CurrencyCode.USD)
+                                                                .currencyCode(CurrencyCode.EUR)
                                                                 .value(Double.toString(totalPriceOfVouchers))
                                                                 .build()
                                                 )
@@ -434,7 +434,7 @@ public class buyVouchersFragment extends Fragment {
                                         new PurchaseUnit.Builder()
                                                 .amount(
                                                         new Amount.Builder()
-                                                                .currencyCode(CurrencyCode.USD)
+                                                                .currencyCode(CurrencyCode.EUR)
                                                                 .value(Double.toString(totalPriceOfVouchers))
                                                                 .build()
                                                 )

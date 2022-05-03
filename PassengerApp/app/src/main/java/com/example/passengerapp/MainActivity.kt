@@ -62,6 +62,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getText(R.string.logoutSuccess), Toast.LENGTH_SHORT).show()
                 return true
             }
+            R.id.helpMenu -> {
+
+            }
         }
         return super.onOptionsItemSelected(item)
     }

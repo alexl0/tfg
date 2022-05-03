@@ -48,4 +48,5 @@
     <string name="tripBought">Viaje comprado correctamente</string>
     <string name="ok">Aceptar</string>
     <string name="notEnoughVoyages">No hay suficientes viajes para esa zona</string>
+    <string name="help">Ayuda</string>
 </resources>
