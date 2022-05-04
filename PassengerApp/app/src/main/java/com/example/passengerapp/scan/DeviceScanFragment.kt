@@ -134,8 +134,6 @@ class DeviceScanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDeviceScanBinding.inflate(inflater, container, false)
-        val devAddr = getString(R.string.your_device_address) + ChatServer.getYourDeviceAddress()
-        binding.yourDeviceAddr.text = devAddr
         binding.deviceList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = deviceScanAdapter

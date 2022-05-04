@@ -45,6 +45,8 @@
         <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/layout/activity_pdf.xml" value="0.1" />
         <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.22" />
         <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/layout/fragment_buy_vouchers.xml" value="0.25" />
+        <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/layout/fragment_device_scan.xml" value="0.18" />
+        <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/layout/item_device.xml" value="0.209375" />
         <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/menu/login_menu.xml" value="0.209375" />
         <entry key="..\:/gitTempTFG/tfg/PassengerApp/app/src/main/res/menu/main_menu.xml" value="0.16296296296296298" />
       </map>

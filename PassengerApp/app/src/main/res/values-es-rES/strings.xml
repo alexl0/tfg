@@ -19,7 +19,6 @@
     <string name="connect_device_prompt">Conectar con dispositivos cercanos</string>
     <string name="send_message_button">Enviar mensaje</string>
     <string name="chatting_with_device">Chateando con %1$s</string>
-    <string name="your_device_address">Tu dirección mac:</string>
     <string name="scanning_header">Escoje un dispositivo para viajar:</string>
 
 

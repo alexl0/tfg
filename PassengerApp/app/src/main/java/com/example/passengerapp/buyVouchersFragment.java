@@ -153,7 +153,7 @@ public class buyVouchersFragment extends Fragment {
         parent = view.findViewById(R.id.parentConstraintLayout);
         textViewTotalPrice = view.findViewById(R.id.textViewTotalPrice);
 
-        textViewTotalPrice.setText(this.pricesZones.get(1)+" €");
+        textViewTotalPrice.setText(getString(R.string.totalPrice) + " " + this.pricesZones.get(1)+" €");
 
         //Paypal button
         payPalButton=view.findViewById(R.id.payPalButton);
@@ -300,7 +300,7 @@ public class buyVouchersFragment extends Fragment {
                 pricesZones.put(8, 86.8);
                 numZonesSelected = Integer.parseInt(parentView.getItemAtPosition(position).toString());
                 totalPriceOfVouchers = this.pricesZones.get(numZonesSelected) * numTripsSelected/10;
-                textViewTotalPrice.setText(Double.toString(totalPriceOfVouchers) + " €");
+                textViewTotalPrice.setText(getString(R.string.totalPrice) + " " + Double.toString(totalPriceOfVouchers) + " €");
 
                 /**
                  * Update paypal button
@@ -420,7 +420,7 @@ public class buyVouchersFragment extends Fragment {
                 pricesZones.put(8, 86.8);
                 numTripsSelected = Integer.parseInt(parentView.getItemAtPosition(position).toString());
                 totalPriceOfVouchers = this.pricesZones.get(numZonesSelected) * numTripsSelected/10;
-                textViewTotalPrice.setText(Double.toString(totalPriceOfVouchers) + " €");
+                textViewTotalPrice.setText(getString(R.string.totalPrice) + " " + Double.toString(totalPriceOfVouchers) + " €");
 
                 /**
                  * Update paypal button

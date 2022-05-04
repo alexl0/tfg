@@ -23,7 +23,7 @@ class DeviceScanViewHolder(
     fun bind(device: BluetoothDevice) {
         bluetoothDevice = device
         name.text = device.name
-        address.text = device.address
+        //address.text = device.address
     }
 
     override fun onClick(view: View) {
