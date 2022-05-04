@@ -58,12 +58,6 @@
     <string name="incorrectPlateString">Invalid string for a plate</string>
 
 
-
-
-
-
-
-
     <string-array name="zonesArray">
         <item>1</item>
         <item>2</item>
@@ -83,5 +77,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="help">Help</string>
 
 </resources>

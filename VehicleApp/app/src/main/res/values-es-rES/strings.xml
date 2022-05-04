@@ -2,24 +2,25 @@
 <resources>
 
 
-    <string name="no_devices_found">No BLE devices found</string>
+    <string name="no_devices_found">No se encontraron dispositivos BLE</string>
     <string name="chat_title">Chat</string>
-    <string name="device_list_title">Pair with new device</string>
-    <string name="location_required_error">The location permission is required to support Bluetooth Low Energy communication</string>
-    <string name="grant_permission_prompt">Grant Location Permission</string>
-    <string name="active_scan_message">Scanning for devices</string>
-    <string name="bt_not_enabled">Please enable Bluetooth in order to scan for devices</string>
-    <string name="enable_bluetooth_prompt">Enable Bluetooth</string>
-    <string name="bt_ads_not_supported">Bluetooth Advertisements are not supported on this device</string>
-    <string name="chat_confirm_message">Would you like to chat with %1$s</string>
+    <string name="device_list_title">Emparejar con nuevo dispositivo</string>
+    <string name="location_required_error">Se necesita Localización para utilizar Bluetooth Low Energy</string>
+    <string name="grant_permission_prompt">Conceder permisos de Localización</string>
+    <string name="active_scan_message">Escaneando dispositivos</string>
+    <string name="bt_not_enabled">Por favor activa Bluetooth para escanear dispositivos</string>
+    <string name="enable_bluetooth_prompt">Activa bluetooth</string>
+    <string name="bt_ads_not_supported">Éste dispositivo no soporta Bluetooth Advertisements</string>
+    <string name="chat_confirm_message">Te gustaría conectarte con %1$s</string>
     <string name="chat_deny_button">No</string>
-    <string name="chat_confirm_button">Yes</string>
-    <string name="no_connected_device_message">Not connected to a device</string>
-    <string name="connect_device_prompt">Connect with nearby devices</string>
-    <string name="send_message_button">Send Message</string>
-    <string name="chatting_with_device">Chatting with %1$s</string>
-    <string name="your_device_address">Your device address:</string>
-    <string name="scanning_header">This device is discoverable</string>
+    <string name="chat_confirm_button">Si</string>
+    <string name="no_connected_device_message">No conectado a un dispositivo</string>
+
+    <string name="connect_device_prompt">Conectar con dispositivos cercanos</string>
+    <string name="send_message_button">Enviar mensaje</string>
+    <string name="chatting_with_device">Chateando con %1$s</string>
+    <string name="your_device_address">Direccion de tu dispositivo:</string>
+    <string name="scanning_header">Este dispositivo es descubrible</string>
 
 
 
@@ -57,4 +58,6 @@
     <string name="needToRestartAnswerNo">NO</string>
     <string name="incorrectNameString">Texto no válido para un nombre</string>
     <string name="incorrectPlateString">Texto no válido para una matrícula</string>
+
+    <string name="help">Ayuda</string>
 </resources>
