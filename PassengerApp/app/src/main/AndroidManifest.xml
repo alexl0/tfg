@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PdfActivityZones"
+            android:exported="true" />
+        <activity
             android:name=".PdfActivity"
             android:exported="true" />
         <activity android:name=".MainActivity" />

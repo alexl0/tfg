@@ -1,5 +1,6 @@
 package com.example.passengerapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -96,6 +97,7 @@ public class buyVouchersFragment extends Fragment {
     Spinner spinnerTrips;
     ConstraintLayout parent;
     TextView textViewTotalPrice;
+    Button viewZonesMap;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -152,6 +154,17 @@ public class buyVouchersFragment extends Fragment {
         spinnerTrips = view.findViewById(R.id.spinnerNumTripsBuy);
         parent = view.findViewById(R.id.parentConstraintLayout);
         textViewTotalPrice = view.findViewById(R.id.textViewTotalPrice);
+        viewZonesMap = view.findViewById(R.id.viewZonesMap);
+
+        //ViewZonesMap Button setup
+        viewZonesMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Change to the PdfZones screen
+                Intent intent = new Intent(getActivity(), PdfActivityZones.class);
+                startActivity(intent);
+            }
+        });
 
         textViewTotalPrice.setText(getString(R.string.totalPrice) + " " + this.pricesZones.get(1)+" €");
 
