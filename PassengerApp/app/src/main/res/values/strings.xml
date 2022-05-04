@@ -49,12 +49,6 @@
     <string name="notEnoughVoyages">Not enough trips for that zone</string>
 
 
-
-
-
-
-
-
     <string-array name="zonesArray">
         <item>1</item>
         <item>2</item>

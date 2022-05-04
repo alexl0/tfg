@@ -62,8 +62,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getText(R.string.logoutSuccess), Toast.LENGTH_SHORT).show()
                 return true
             }
-            R.id.helpMenu -> {
-
+            R.id.help_menu -> {
+                val intent = Intent(this, PdfActivity::class.java);
+                startActivity(intent);
             }
         }
         return super.onOptionsItemSelected(item)

@@ -64,4 +64,7 @@ dependencies {
 
     implementation 'com.paypal.checkout:android-sdk:0.6.2'
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.google.android.material:material:1.4.0'
 }

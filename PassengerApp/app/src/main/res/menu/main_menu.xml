@@ -7,6 +7,6 @@
         app:showAsAction="never"/>
     <item
         android:title="@string/help"
-        android:id="@+id/helpMenu"
+        android:id="@+id/help_menu"
         app:showAsAction="never"/>
 </menu>
