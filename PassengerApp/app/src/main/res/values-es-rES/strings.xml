@@ -50,4 +50,6 @@
     <string name="notEnoughVoyages">No hay suficientes viajes para esa zona</string>
     <string name="help">Ayuda</string>
     <string name="viewZonesMap">Ver mapa de zonas</string>
+    <string name="Warning">Atención</string>
+    <string name="wantToDisconnect">¿Está seguro de que desea desconectarse del vehículo?</string>
 </resources>

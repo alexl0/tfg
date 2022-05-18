@@ -76,6 +76,12 @@ object ChatServer {
         stopAdvertising()
     }
 
+    fun hardStopServer(){
+        stopAdvertising()
+        adapter.cancelDiscovery()
+        adapter.disable() //This method works, but it ask the user to enable bluetooth again
+    }
+
     /**
      * The questions of how to obtain a device's own MAC address comes up a lot. The answer is
      * you cannot; it would be a security breach. Only system apps can get that permission.

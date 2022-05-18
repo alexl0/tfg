@@ -25,11 +25,13 @@ import com.example.passengerapp.AuthActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import android.app.AlarmManager
+import android.app.AlertDialog
 import com.jakewharton.processphoenix.ProcessPhoenix
 
 import android.app.PendingIntent
 
 import android.content.Intent
+import android.widget.Toast
 import com.example.passengerapp.MainActivity
 import java.io.File
 
@@ -59,7 +61,7 @@ class BluetoothChatFragment : Fragment() {
                 /**
                  * Restart server.
                  * Because if not, when disconecting the vehicle app and connecting it again, it remains conected.
-                 * It's not good because the passenger could use the buse once and once again
+                 * It's not good because the passenger could use the bus once and once again
                  */
                 ChatServer.stopServer()
                 ChatServer.startServer(requireActivity().application)
@@ -116,29 +118,19 @@ class BluetoothChatFragment : Fragment() {
         }
 
         binding.disconnectFromDevice.setOnClickListener {
-            //Delete cache
-            deleteCache(requireContext())
-            //Restart app
-            val mStartActivity = Intent(context, AuthActivity::class.java)
-            val mPendingIntentId = 123456
-            val mPendingIntent = PendingIntent.getActivity(
-                context,
-                mPendingIntentId,
-                mStartActivity,
-                PendingIntent.FLAG_CANCEL_CURRENT
-            )
-            val mgr = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
-            mgr[AlarmManager.RTC, System.currentTimeMillis() + 100] = mPendingIntent
-            System.exit(0)
-            //Restart the app
-            try{
-                ProcessPhoenix.triggerRebirth(context);
-            } catch(e:IllegalStateException){
-                //The IllegalStateException is expected, everithing is working fine
-                throw e //The application must crash to restart completely. It's a trick
-            } catch (e: Exception){
-                Log.d(TAG, "Something went wrong when restarting the app to disconnect from the vehicle.")
+            //Ask user first
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle(R.string.Warning)
+            builder.setMessage(R.string.wantToDisconnect)
+            //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+            builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+                disconnectFromDeviceFunction()
             }
+            builder.setNegativeButton(android.R.string.no) { dialog, which ->
+                Toast.makeText(requireContext(),
+                    android.R.string.no, Toast.LENGTH_SHORT).show()
+            }
+            builder.show()
         }
 
         binding.seeHistory.setOnClickListener {
@@ -146,6 +138,34 @@ class BluetoothChatFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun disconnectFromDeviceFunction(){
+        //Stop server
+        ChatServer.hardStopServer()
+        //Delete cache
+        deleteCache(requireContext())
+        //Restart app
+        val mStartActivity = Intent(context, MainActivity::class.java)
+        val mPendingIntentId = 123456
+        val mPendingIntent = PendingIntent.getActivity(
+            requireContext(),
+            mPendingIntentId,
+            mStartActivity,
+            PendingIntent.FLAG_CANCEL_CURRENT
+        )
+        val mgr = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        mgr[AlarmManager.RTC, System.currentTimeMillis() + 100] = mPendingIntent
+        System.exit(0)
+        //Restart the app
+        try{
+            ProcessPhoenix.triggerRebirth(context);
+        } catch(e:IllegalStateException){
+            //The IllegalStateException is expected, everithing is working fine
+            throw e //The application must crash to restart completely. It's a trick
+        } catch (e: Exception){
+            Log.d(TAG, "Something went wrong when restarting the app to disconnect from the vehicle.")
+        }
     }
 
     fun changeDeviceName() {

@@ -71,5 +71,7 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="help">Help</string>
     <string name="viewZonesMap">View zones map</string>
+    <string name="Warning">Warning</string>
+    <string name="wantToDisconnect">Are you sure that you want to disconnect from the current vehicle?</string>
 
 </resources>
