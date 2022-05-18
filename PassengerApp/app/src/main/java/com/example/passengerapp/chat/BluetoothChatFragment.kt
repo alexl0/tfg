@@ -221,7 +221,7 @@ class BluetoothChatFragment : Fragment() {
         val chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
         //Add to local history in case
         var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
-        SingletonClass.get().history.add(deviceNameSub + " " + currentDate)
+        SingletonClass.get().history.add(deviceNameSub + " " + getString(R.string.zonesMin) + " " + currentDate)
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
         binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
