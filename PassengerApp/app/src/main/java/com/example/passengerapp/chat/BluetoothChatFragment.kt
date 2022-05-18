@@ -15,27 +15,23 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.passengerapp.bluetooth.Message
 import com.example.passengerapp.R
+import com.example.passengerapp.SingletonClass
 import com.example.passengerapp.bluetooth.ChatServer
+import com.example.passengerapp.bluetooth.Message
 import com.example.passengerapp.databinding.FragmentBluetoothChatBinding
 import com.example.passengerapp.gone
-import com.example.passengerapp.visible
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.DocumentSnapshot
-
-import androidx.annotation.NonNull
-
-import com.google.android.gms.tasks.OnCompleteListener
-
-import com.google.firebase.firestore.DocumentReference
-
-import com.example.passengerapp.SingletonClass
-import com.google.android.material.snackbar.Snackbar
-
-import com.google.firebase.auth.FirebaseUser
+import com.example.passengerapp.AuthActivity
 import java.text.SimpleDateFormat
 import java.util.*
+import android.app.AlarmManager
+import com.jakewharton.processphoenix.ProcessPhoenix
+
+import android.app.PendingIntent
+
+import android.content.Intent
+import com.example.passengerapp.MainActivity
+import java.io.File
 
 
 private const val TAG = "BluetoothChatFragment"
@@ -119,6 +115,32 @@ class BluetoothChatFragment : Fragment() {
             findNavController().navigate(R.id.action_bluetoothChatFragment_to_myVouchersFragment)
         }
 
+        binding.disconnectFromDevice.setOnClickListener {
+            //Delete cache
+            deleteCache(requireContext())
+            //Restart app
+            val mStartActivity = Intent(context, AuthActivity::class.java)
+            val mPendingIntentId = 123456
+            val mPendingIntent = PendingIntent.getActivity(
+                context,
+                mPendingIntentId,
+                mStartActivity,
+                PendingIntent.FLAG_CANCEL_CURRENT
+            )
+            val mgr = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+            mgr[AlarmManager.RTC, System.currentTimeMillis() + 100] = mPendingIntent
+            System.exit(0)
+            //Restart the app
+            try{
+                ProcessPhoenix.triggerRebirth(context);
+            } catch(e:IllegalStateException){
+                //The IllegalStateException is expected, everithing is working fine
+                throw e //The application must crash to restart completely. It's a trick
+            } catch (e: Exception){
+                Log.d(TAG, "Something went wrong when restarting the app to disconnect from the vehicle.")
+            }
+        }
+
         binding.seeHistory.setOnClickListener {
             findNavController().navigate(R.id.action_bluetoothChatFragment_to_seeHistoryFragment)
         }
@@ -154,7 +176,11 @@ class BluetoothChatFragment : Fragment() {
     private fun chatWith(device: BluetoothDevice) {
         //binding.connectedContainer.visible()
         //binding.notConnectedContainer.gone()
+
         binding.connectDevices.isEnabled = false;
+        binding.disconnectFromDevice.isEnabled = true;
+        //binding.connectDevices.visibility = View.GONE;
+        //binding.disconnectFromDevice.visibility = View.VISIBLE;
 
         /*val chattingWithString = resources.getString(R.string.chatting_with_device, device.address)
         binding.connectedDeviceName.text = chattingWithString
@@ -169,11 +195,12 @@ class BluetoothChatFragment : Fragment() {
         }*/
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
-        val chattingWithString = resources.getString(R.string.connected_device_message) + device.name + "\n" + currentDate
+        val chattingWithString = resources.getString(R.string.connected_device_message) + " " + device.name + "\n" + currentDate
         //Add to local history in case
         SingletonClass.get().history.add(device.name + " " + currentDate)
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
+        binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
     }
 
     private fun showDisconnected() {
@@ -182,10 +209,44 @@ class BluetoothChatFragment : Fragment() {
         binding.connectedContainer.gone()
         binding.connectDeviceMessage.text = resources.getString(R.string.no_connected_device_message)
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#ff0000"))
+        binding.connectDeviceMessage.setTextColor(Color.parseColor("#ffffff"))
+
         binding.connectDevices.isEnabled = true;
+        binding.disconnectFromDevice.isEnabled = false;
+        //binding.connectDevices.visibility = View.VISIBLE;
+        //binding.disconnectFromDevice.visibility = View.GONE;
+
     }
 
     private fun hideKeyboard() {
         inputMethodManager.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
+
+    //Delete Cache in order for the restart method to work
+    fun deleteCache(context: Context) {
+        try {
+            val dir: File = context.cacheDir
+            deleteDir(dir)
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    fun deleteDir(dir: File?): Boolean {
+        return if (dir != null && dir.isDirectory()) {
+            val children: Array<String> = dir.list()
+            for (i in children.indices) {
+                val success = deleteDir(File(dir, children[i]))
+                if (!success) {
+                    return false
+                }
+            }
+            dir.delete()
+        } else if (dir != null && dir.isFile()) {
+            dir.delete()
+        } else {
+            false
+        }
+    }
+
 }

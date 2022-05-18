@@ -2,14 +2,11 @@
 package com.example.passengerapp
 
 import android.content.Intent
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import com.example.passengerapp.bluetooth.ChatServer
 import com.google.firebase.auth.FirebaseAuth
 

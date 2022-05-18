@@ -17,6 +17,7 @@
     <string name="no_connected_device_message">No conectado a un dispositivo</string>
     <string name="connected_device_message">Conectado a: </string>
     <string name="connect_device_prompt">Conectar con dispositivos cercanos</string>
+    <string name="disconnect_from_device_prompt">Desconectar del vehículo</string>
     <string name="chatting_with_device">Chateando con %1$s</string>
     <string name="scanning_header">Escoje un dispositivo para viajar:</string>
     <string name="seeHistory_prompt">Ver historial</string>

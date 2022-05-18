@@ -20,9 +20,9 @@
             android:gravity="center"
             android:shadowRadius="@android:integer/config_longAnimTime"
             android:text="@string/no_connected_device_message"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
 
-            android:textSize="18dp" />
+            android:textSize="24dp" />
 
         <Button
             android:id="@+id/buyVouchers"
@@ -43,6 +43,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/connect_device_prompt"/>
+
+        <Button
+            android:id="@+id/disconnect_from_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:text="@string/disconnect_from_device_prompt"/>
 
         <Button
             android:id="@+id/seeHistory"
