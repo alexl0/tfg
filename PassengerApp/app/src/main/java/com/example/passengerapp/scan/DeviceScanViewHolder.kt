@@ -2,6 +2,7 @@
 package com.example.passengerapp.scan
 
 import android.bluetooth.BluetoothDevice
+import android.content.res.Resources
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,9 @@ class DeviceScanViewHolder(
 
     fun bind(device: BluetoothDevice) {
         bluetoothDevice = device
-        name.text = device.name
+        var deviceName:String = device.name
+        var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
+        name.text = deviceNameSub
         //address.text = device.address
     }
 

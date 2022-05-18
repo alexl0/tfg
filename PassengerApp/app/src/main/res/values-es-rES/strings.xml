@@ -43,6 +43,7 @@
     <string name="totalPrice">Total a pagar: </string>
     <string name="pay">Pagar</string>
     <string name="zones">Zonas</string>
+    <string name="zonesMin">zonas</string>
     <string name="trips">Viajes</string>
     <string name="tripsBought">Viajes comprados correctamente</string>
     <string name="tripBought">Viaje comprado correctamente</string>

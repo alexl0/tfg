@@ -42,6 +42,7 @@
     <string name="totalPrice">Total price: </string>
     <string name="pay">Pay</string>
     <string name="zones">Zones</string>
+    <string name="zonesMin">zones</string>
     <string name="trips">Trips</string>
     <string name="tripsBought">Trips successfully bought</string>
     <string name="tripBought">Trip successfully bought</string>

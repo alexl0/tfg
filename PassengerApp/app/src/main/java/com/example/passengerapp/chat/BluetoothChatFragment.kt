@@ -215,9 +215,13 @@ class BluetoothChatFragment : Fragment() {
         }*/
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
-        val chattingWithString = resources.getString(R.string.connected_device_message) + " " + device.name + "\n" + currentDate
+        val deviceName = device.name
+        val deviceNameWithZonesWordLocated = deviceName.subSequence(0, deviceName.length-6).toString() + "\n" +
+                                             deviceName.subSequence(deviceName.length-6, deviceName.length-5).toString()+ " " + getString(R.string.zonesMin)
+        val chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
         //Add to local history in case
-        SingletonClass.get().history.add(device.name + " " + currentDate)
+        var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
+        SingletonClass.get().history.add(deviceNameSub + " " + currentDate)
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
         binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
