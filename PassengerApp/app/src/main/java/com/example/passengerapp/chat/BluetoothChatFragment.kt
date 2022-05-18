@@ -119,6 +119,10 @@ class BluetoothChatFragment : Fragment() {
             findNavController().navigate(R.id.action_bluetoothChatFragment_to_myVouchersFragment)
         }
 
+        binding.seeHistory.setOnClickListener {
+            findNavController().navigate(R.id.action_bluetoothChatFragment_to_seeHistoryFragment)
+        }
+
         return binding.root
     }
 
@@ -166,6 +170,8 @@ class BluetoothChatFragment : Fragment() {
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
         val chattingWithString = resources.getString(R.string.connected_device_message) + device.name + "\n" + currentDate
+        //Add to local history in case
+        SingletonClass.get().history.add(device.name + " " + currentDate)
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
     }

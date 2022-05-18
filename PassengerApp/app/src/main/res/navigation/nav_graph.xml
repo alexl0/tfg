@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_bluetoothChatFragment_to_myVouchersFragment"
             app:destination="@id/myVouchersFragment" />
+        <action
+            android:id="@+id/action_bluetoothChatFragment_to_seeHistoryFragment"
+            app:destination="@id/seeHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/deviceListFragment"
@@ -54,4 +57,9 @@
         android:name="com.example.passengerapp.MyVouchersFragment"
         android:label="fragment_my_vouchers"
         tools:layout="@layout/fragment_my_vouchers" />
+    <fragment
+        android:id="@+id/seeHistoryFragment"
+        android:name="com.example.passengerapp.seeHistoryFragment"
+        android:label="fragment_see_history"
+        tools:layout="@layout/fragment_see_history" />
 </navigation>
