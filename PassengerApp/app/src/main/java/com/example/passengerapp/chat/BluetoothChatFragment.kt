@@ -15,13 +15,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.passengerapp.R
-import com.example.passengerapp.SingletonClass
 import com.example.passengerapp.bluetooth.ChatServer
 import com.example.passengerapp.bluetooth.Message
 import com.example.passengerapp.databinding.FragmentBluetoothChatBinding
-import com.example.passengerapp.gone
-import com.example.passengerapp.AuthActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import android.app.AlarmManager
@@ -32,7 +28,7 @@ import android.app.PendingIntent
 
 import android.content.Intent
 import android.widget.Toast
-import com.example.passengerapp.MainActivity
+import com.example.passengerapp.*
 import java.io.File
 
 
@@ -221,7 +217,10 @@ class BluetoothChatFragment : Fragment() {
         val chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
         //Add to local history in case
         var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
-        SingletonClass.get().history.add(deviceNameSub + " " + getString(R.string.zonesMin) + " " + currentDate)
+        var definitiveHistoryField = deviceNameSub + " " + getString(R.string.zonesMin) + " " + currentDate
+        SingletonClass.get().history.add(definitiveHistoryField)
+        var sqliteManager = SQLiteManager.instanceOfDatabase(requireContext())
+        sqliteManager.addDataFieldToDB(definitiveHistoryField)
         binding.connectDeviceMessage.text = chattingWithString
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
         binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))

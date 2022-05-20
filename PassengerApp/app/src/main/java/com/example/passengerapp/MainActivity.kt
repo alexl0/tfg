@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        loadFromDBToMemory()
+    }
+
+    private fun loadFromDBToMemory() {
+        var sqLiteManager = SQLiteManager.instanceOfDatabase(this)
+        sqLiteManager.populateHistoryListArray()
     }
 
     // Run the chat server as long as the app is on screen
