@@ -190,31 +190,18 @@ class BluetoothChatFragment : Fragment() {
     }
 
     private fun chatWith(device: BluetoothDevice) {
-        //binding.connectedContainer.visible()
-        //binding.notConnectedContainer.gone()
-
         binding.connectDevices.isEnabled = false;
         binding.disconnectFromDevice.isEnabled = true;
         //binding.connectDevices.visibility = View.GONE;
         //binding.disconnectFromDevice.visibility = View.VISIBLE;
 
-        /*val chattingWithString = resources.getString(R.string.chatting_with_device, device.address)
-        binding.connectedDeviceName.text = chattingWithString
-        binding.sendMessage.setOnClickListener {
-            val message = binding.messageText.text.toString()
-            // only send message if it is not empty
-            if (message.isNotEmpty()) {
-                ChatServer.sendMessage(message)
-                // clear message
-                binding.messageText.setText("")
-            }
-        }*/
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())
         val deviceName = device.name
         val deviceNameWithZonesWordLocated = deviceName.subSequence(0, deviceName.length-6).toString() + "\n" +
                                              deviceName.subSequence(deviceName.length-6, deviceName.length-5).toString()+ " " + getString(R.string.zonesMin)
         val chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
+
         //Add to local history in case
         var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
         var definitiveHistoryField = deviceNameSub + " " + getString(R.string.zonesMin) + " " + currentDate

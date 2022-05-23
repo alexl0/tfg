@@ -41,5 +41,9 @@ public class SingletonClass {
         return this.history;
     }
 
+    public void deleteHistory(){
+        this.history.clear();
+    }
+
 
 }

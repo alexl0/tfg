@@ -1,5 +1,6 @@
 package com.example.passengerapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 /**
@@ -19,6 +21,7 @@ public class seeHistoryFragment extends Fragment {
 
     private ListView listViewHistory;
     private ArrayAdapter<String> myAdapter;
+    Button deleteHistoryButton;
 
     public seeHistoryFragment() {
         // Required empty public constructor
@@ -55,6 +58,18 @@ public class seeHistoryFragment extends Fragment {
         listViewHistory = view.findViewById(R.id.listViewHistory);
         myAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,SingletonClass.get().getHistory());
         listViewHistory.setAdapter(myAdapter);
+
+        deleteHistoryButton = view.findViewById(R.id.deleteHistoryButton);
+
+        deleteHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SingletonClass.get().deleteHistory();
+                myAdapter.notifyDataSetChanged();
+                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
+                sqLiteManager.deleteHistory();
+            }
+        });
 
         return view;
     }

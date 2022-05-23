@@ -53,4 +53,5 @@
     <string name="viewZonesMap">Ver mapa de zonas</string>
     <string name="Warning">Atención</string>
     <string name="wantToDisconnect">¿Está seguro de que desea desconectarse del vehículo?</string>
+    <string name="deleteHistory">Borrar historial</string>
 </resources>

@@ -69,6 +69,13 @@ public class SQLiteManager extends SQLiteOpenHelper {
         }
     }
 
+    public void deleteHistory(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        StringBuilder sql;
+        sqLiteDatabase.delete(TABLE_NAME,"1==1", null);
+        //sql = new StringBuilder().append("DELETE * FROM ").append(TABLE_NAME);
+        //sqLiteDatabase.execSQL(sql.toString());
+    }
 
 
 }

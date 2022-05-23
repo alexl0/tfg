@@ -6,9 +6,20 @@
     android:orientation="vertical"
     tools:context=".seeHistoryFragment">
 
+    <Button
+        android:id="@+id/deleteHistoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/deleteHistory"
+        android:textColor="#FF0000"
+        android:visibility="visible"/>
     <ListView
         android:id="@+id/listViewHistory"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal"
+        ></ListView>
 
 </LinearLayout>
