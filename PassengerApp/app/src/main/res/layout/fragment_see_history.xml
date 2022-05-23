@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".seeHistoryFragment">
-
     <Button
         android:id="@+id/deleteHistoryButton"
         android:layout_width="match_parent"
@@ -16,10 +15,9 @@
         android:visibility="visible"/>
     <ListView
         android:id="@+id/listViewHistory"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:stackFromBottom="true"
         android:transcriptMode="normal"
-        ></ListView>
-
+        android:layout_gravity="top"></ListView>
 </LinearLayout>

@@ -75,5 +75,6 @@
     <string name="Warning">Warning</string>
     <string name="wantToDisconnect">Are you sure that you want to disconnect from the current vehicle?</string>
     <string name="deleteHistory">Delete history</string>
+    <string name="deleteHistoryConfirmDialog">Are you sure that you want to delete your history?</string>
 
 </resources>

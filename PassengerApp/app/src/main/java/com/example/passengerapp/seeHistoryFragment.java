@@ -1,5 +1,7 @@
 package com.example.passengerapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -22,7 +24,7 @@ public class seeHistoryFragment extends Fragment {
     private ListView listViewHistory;
     private ArrayAdapter<String> myAdapter;
     Button deleteHistoryButton;
-
+    AlertDialog.Builder builder;
     public seeHistoryFragment() {
         // Required empty public constructor
     }
@@ -64,10 +66,30 @@ public class seeHistoryFragment extends Fragment {
         deleteHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SingletonClass.get().deleteHistory();
-                myAdapter.notifyDataSetChanged();
-                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
-                sqLiteManager.deleteHistory();
+                //Ask user first
+                builder = new AlertDialog.Builder(requireContext());
+
+                //Setting message manually and performing action on button click
+                builder.setMessage(R.string.deleteHistoryConfirmDialog).setTitle(R.string.Warning)
+                        .setCancelable(true)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //Delete history
+                                SingletonClass.get().deleteHistory();
+                                myAdapter.notifyDataSetChanged();
+                                SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
+                                sqLiteManager.deleteHistory();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //  Action for 'NO' Button
+                                dialog.cancel();
+                            }
+                        });
+                //Creating dialog box
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
 
