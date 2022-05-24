@@ -4,7 +4,7 @@
 
     <string name="no_devices_found">No se encontraron dispositivos BLE</string>
     <string name="chat_title">Chat</string>
-    <string name="device_list_title">Emparejar con nuevo dispositivo</string>
+    <string name="device_list_title">VehicleApp</string>
     <string name="location_required_error">Se necesita Localización para utilizar Bluetooth Low Energy</string>
     <string name="grant_permission_prompt">Conceder permisos de Localización</string>
     <string name="active_scan_message">Escaneando dispositivos</string>
