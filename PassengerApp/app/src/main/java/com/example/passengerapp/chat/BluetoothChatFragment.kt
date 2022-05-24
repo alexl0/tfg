@@ -41,9 +41,9 @@ class BluetoothChatFragment : Fragment() {
     // this property is valid between onCreateView and onDestroyView.
     private val binding: FragmentBluetoothChatBinding
         get() = _binding!!
-    private var isConnectedToADevice = false;
 
     private var bluetoothAdapter: BluetoothAdapter? = null
+    private var chattingWithString:String = ""
 
     private val deviceConnectionObserver = Observer<DeviceConnectionState> { state ->
         when(state) {
@@ -53,6 +53,7 @@ class BluetoothChatFragment : Fragment() {
                 chatWith(device)
             }
             is DeviceConnectionState.Disconnected -> {
+                SingletonClass.get().isConnectedToADevice = false;
                 showDisconnected()
 
                 /**
@@ -136,6 +137,7 @@ class BluetoothChatFragment : Fragment() {
     }
 
     fun disconnectFromDeviceFunction(){
+        SingletonClass.get().isConnectedToADevice = false
         //Stop server
         ChatServer.hardStopServer()
         //Delete cache
@@ -189,24 +191,20 @@ class BluetoothChatFragment : Fragment() {
     }
 
     private fun chatWith(device: BluetoothDevice) {
-        if(binding.connectDevices.isEnabled && !binding.disconnectFromDevice.isEnabled && !isConnectedToADevice){
-            binding.connectDevices.isEnabled = false;
-            binding.disconnectFromDevice.isEnabled = true;
-            this.isConnectedToADevice = true;
-            //binding.connectDevices.visibility = View.GONE;
-            //binding.disconnectFromDevice.visibility = View.VISIBLE;
+        binding.connectDevices.isEnabled = false;
+        binding.disconnectFromDevice.isEnabled = true;
+        //binding.connectDevices.visibility = View.GONE;
+        //binding.disconnectFromDevice.visibility = View.VISIBLE;
+        if(!SingletonClass.get().isConnectedToADevice){
+            SingletonClass.get().isConnectedToADevice = true
 
             val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
             val currentDate = sdf.format(Date())
             val deviceName = device.name
             val deviceNameWithZonesWordLocated = deviceName.subSequence(0, deviceName.length-6).toString() + "\n" +
                     deviceName.subSequence(deviceName.length-6, deviceName.length-5).toString()+ " " + getString(R.string.zonesMin)
-            val chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
+            chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
 
-            //Mostramos en la pantalla principal
-            binding.connectDeviceMessage.text = chattingWithString
-            binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
-            binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
 
             //Add to local history in case
             var deviceNameSub:String = deviceName.subSequence(0, deviceName.length-5).toString()
@@ -215,6 +213,10 @@ class BluetoothChatFragment : Fragment() {
             var sqliteManager = SQLiteManager.instanceOfDatabase(requireContext())
             sqliteManager.addDataFieldToDB(definitiveHistoryField)
         }
+        //Mostramos en la pantalla principal
+        binding.connectDeviceMessage.text = chattingWithString
+        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
+        binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
     }
 
     private fun showDisconnected() {
@@ -229,7 +231,6 @@ class BluetoothChatFragment : Fragment() {
         binding.disconnectFromDevice.isEnabled = false;
         //binding.connectDevices.visibility = View.VISIBLE;
         //binding.disconnectFromDevice.visibility = View.GONE;
-        isConnectedToADevice = false;
     }
 
     private fun hideKeyboard() {

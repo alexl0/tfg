@@ -15,6 +15,7 @@ public class SingletonClass {
     Hashtable<String, Object> hashObjects;
     //History
     List<String> history;
+    Boolean connectedToADevice;
 
     //property created only one time
     private static SingletonClass mSingletonClass;
@@ -23,6 +24,7 @@ public class SingletonClass {
     private SingletonClass(){
         hashObjects = new Hashtable<String, Object>();
         history = new ArrayList<String>();
+        connectedToADevice = false;
     }
 
     //The other classes use this get method
@@ -45,5 +47,12 @@ public class SingletonClass {
         this.history.clear();
     }
 
+    //Connected to a device
+    public boolean isConnectedToADevice(){
+        return this.connectedToADevice;
+    }
+    public void setConnectedToADevice(boolean value){
+        this.connectedToADevice = value;
+    }
 
 }
