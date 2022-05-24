@@ -16,7 +16,6 @@
             android:id="@+id/connect_device_message"
             android:layout_width="match_parent"
             android:layout_height="92dp"
-            android:background="@drawable/rounded_corner"
             android:gravity="center"
             android:shadowRadius="@android:integer/config_longAnimTime"
             android:text="@string/no_connected_device_message"

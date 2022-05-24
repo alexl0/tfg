@@ -5,18 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_gravity="left">
-
+    android:layout_gravity="left"
+    android:background="@drawable/rounded_corner"
+    android:layout_marginBottom="3mm"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp">
     <TextView
-        android:id="@+id/device_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="-"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="4mm"
+        android:textColor="#FFFF"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="4mm"
+        android:textColor="#FFFF"/>
 
     <TextView
         android:id="@+id/device_address"
@@ -30,5 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/device_name" />
+        app:layout_constraintTop_toBottomOf="@+id/device_name"
+        android:textSize="4mm"
+        android:textColor="#FFFF"/>
 </LinearLayout>
