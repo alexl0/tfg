@@ -16,6 +16,7 @@ public class SingletonClass {
     //History
     List<String> history;
     Boolean connectedToADevice;
+    String chattingWithString;
 
     //property created only one time
     private static SingletonClass mSingletonClass;
@@ -25,6 +26,7 @@ public class SingletonClass {
         hashObjects = new Hashtable<String, Object>();
         history = new ArrayList<String>();
         connectedToADevice = false;
+        chattingWithString = "";
     }
 
     //The other classes use this get method
@@ -55,4 +57,11 @@ public class SingletonClass {
         this.connectedToADevice = value;
     }
 
+    //Chatwithstring
+    public String getChattingWithString(){
+        return this.chattingWithString;
+    }
+    public void setChattingWithString(String value){
+        this.chattingWithString = value;
+    }
 }

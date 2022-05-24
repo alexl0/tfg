@@ -43,7 +43,6 @@ class BluetoothChatFragment : Fragment() {
         get() = _binding!!
 
     private var bluetoothAdapter: BluetoothAdapter? = null
-    private var chattingWithString:String = ""
 
     private val deviceConnectionObserver = Observer<DeviceConnectionState> { state ->
         when(state) {
@@ -203,7 +202,7 @@ class BluetoothChatFragment : Fragment() {
             val deviceName = device.name
             val deviceNameWithZonesWordLocated = deviceName.subSequence(0, deviceName.length-6).toString() + "\n" +
                     deviceName.subSequence(deviceName.length-6, deviceName.length-5).toString()+ " " + getString(R.string.zonesMin)
-            chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
+            SingletonClass.get().chattingWithString = resources.getString(R.string.connected_device_message) + " " + deviceNameWithZonesWordLocated + "\n" + currentDate
 
 
             //Add to local history in case
@@ -214,7 +213,7 @@ class BluetoothChatFragment : Fragment() {
             sqliteManager.addDataFieldToDB(definitiveHistoryField)
         }
         //Mostramos en la pantalla principal
-        binding.connectDeviceMessage.text = chattingWithString
+        binding.connectDeviceMessage.text = SingletonClass.get().chattingWithString;
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
         binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
     }
