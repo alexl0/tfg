@@ -44,6 +44,7 @@ public class AuthActivity extends AppCompatActivity {
     EditText emailEditText;
     EditText passwordEditText;
     AppCompatButton googleButton;
+    Button testAppButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class AuthActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         googleButton = findViewById(R.id.googleButton);
+        testAppButton = findViewById(R.id.testApp);
 
         setup();
         session();
@@ -139,6 +141,13 @@ public class AuthActivity extends AppCompatActivity {
                 //cerramos la que haya antes
                 mGoogleSignInClient.signOut();
                 startActivityForResult(mGoogleSignInClient.getSignInIntent(),GOOGLE_SIGN_IN);
+            }
+        });
+
+        testAppButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTestActivity();
             }
         });
     }
@@ -262,5 +271,13 @@ public class AuthActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Changes the testing screen
+     */
+    private void openTestActivity() {
+        //Change to the TestActivity screen
+        Intent intent = new Intent(this, TestActivity.class);
+        startActivity(intent);
+    }
 
 }

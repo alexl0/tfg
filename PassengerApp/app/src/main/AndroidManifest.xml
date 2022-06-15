@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".TestActivity"
+            android:exported="true" />
+        <activity
             android:name=".PdfActivityZones"
             android:exported="true" />
         <activity

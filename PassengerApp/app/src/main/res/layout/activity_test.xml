@@ -1,0 +1,168 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test"
+                android:textStyle="bold"
+                android:textSize="3mm"
+                android:textColor="#FFFF"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="State"
+                android:textStyle="bold"
+                android:textSize="3mm"
+                android:textColor="#FFFF"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow android:background="@color/colorPrimaryDark" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="login"
+                android:textSize="3mm"
+                android:textColor="#FFFF"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/textViewLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="4mm"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorPrimary"/>
+        <TableRow android:background="@color/colorPrimaryDark" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="detect BT devices"
+                android:textSize="3mm"
+                android:textColor="#FFFF"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/textViewDetect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="4mm"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorPrimary"/>
+        <TableRow android:background="@color/colorPrimaryDark" android:padding="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="modify database"
+                android:textSize="3mm"
+                android:textColor="#FFFF"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/textViewModify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="-"
+                android:textSize="4mm"
+                android:textColor="#FFFFFF"
+                android:gravity="center"/>
+        </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/colorPrimary"/>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/testLoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Test login"/>
+    <Button
+        android:id="@+id/testBTButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Test BT"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DB Testing:"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/testDBButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Put every zone to 0 trips"
+        android:enabled="false"/>
+    <Button
+        android:id="@+id/testDBButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Check every zone has 0 trip"
+        android:enabled="false"/>
+    <Button
+        android:id="@+id/testDBButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Put every zone to 50 trips"
+        android:enabled="false"/>
+    <Button
+        android:id="@+id/testDBButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Check every zone has 50 trip"
+        android:enabled="false"/>
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="log out"
+        android:enabled="false"/>
+
+</LinearLayout>

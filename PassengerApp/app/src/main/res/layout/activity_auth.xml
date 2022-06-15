@@ -70,5 +70,14 @@
             android:text="Google"
             android:textAlignment="center"
             android:textColor="@color/myBlack" />
+
+        <Button
+            android:id="@+id/testApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            android:text="test app" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
