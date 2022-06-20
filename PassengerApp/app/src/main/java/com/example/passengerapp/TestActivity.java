@@ -3,10 +3,13 @@ package com.example.passengerapp;
 import static org.junit.Assert.assertEquals;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -68,6 +71,7 @@ public class TestActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        //Click listeners
         testLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +114,8 @@ public class TestActivity extends AppCompatActivity {
                 testDBButton4.setEnabled(false);
                 textViewLogin.setText("-");
                 textViewLogin.setTextColor(Color.WHITE);
+                textViewModify.setText("-");
+                textViewModify.setTextColor(Color.WHITE);
                 logOut();
             }
         });
@@ -153,7 +159,9 @@ public class TestActivity extends AppCompatActivity {
                 });
     }
 
-
+    /**
+     * Database tests
+     */
     private void testDatabase1(){
         DocumentReference docRef = db.collection("users").document(testEmail);
 
@@ -269,5 +277,8 @@ public class TestActivity extends AppCompatActivity {
      */
     public void logOut(){
         mAuth.getInstance().signOut();
+        Toast.makeText(TestActivity.this, "OK. " + "Logged out successfully.",
+                Toast.LENGTH_LONG).show();
     }
+
 }
