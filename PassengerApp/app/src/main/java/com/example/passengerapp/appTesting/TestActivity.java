@@ -1,7 +1,9 @@
-package com.example.passengerapp;
+package com.example.passengerapp.appTesting;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.passengerapp.R;
 
 public class TestActivity extends AppCompatActivity {
 

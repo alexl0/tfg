@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_device_scan_test.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_test.xml" value="0.33" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.16770833333333332" />

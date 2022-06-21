@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/testFragment"
-        android:name="com.example.passengerapp.TestFragment"
+        android:name="com.example.passengerapp.appTesting.TestFragment"
         android:label="TestFragment" >
         <action
             android:id="@+id/action_testFragment_to_deviceScanFragTest"

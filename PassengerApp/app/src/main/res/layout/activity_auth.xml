@@ -78,6 +78,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="100dp"
             android:layout_weight="1"
-            android:text="test app" />
+            android:text="test app"
+            android:visibility="invisible"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@
             android:name=".DeviceScanActivityTest"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
+            android:name=".appTesting.TestActivity"
             android:exported="true" />
         <activity
             android:name=".PdfActivityZones"

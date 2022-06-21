@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.passengerapp.*
+import com.example.passengerapp.appTesting.TestActivity
 import com.example.passengerapp.bluetooth.ChatServer
 import com.example.passengerapp.databinding.FragmentDeviceScanBinding
 import com.example.passengerapp.scan.DeviceScanViewState.*
