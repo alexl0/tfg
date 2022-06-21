@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.passengerapp.*
@@ -21,10 +22,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
-private const val TAG = "DeviceScanFragment"
-const val GATT_KEY = "gatt_bundle_key"
+private const val TAG = "DeviceScanFragTest"
 
-class DeviceScanFragment : Fragment() {
+class DeviceScanFragTest : Fragment() {
 
     private var _binding: FragmentDeviceScanBinding? = null
 
@@ -144,10 +144,7 @@ class DeviceScanFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        if(SingletonClass.get().testingBT)
-            requireActivity().setTitle("Testing Bluetooth")
-        else
-            requireActivity().setTitle(R.string.device_list_title)
+        requireActivity().setTitle("Testing Bluetooth")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -183,13 +180,14 @@ class DeviceScanFragment : Fragment() {
             binding.error.gone()
             binding.chatConfirmContainer.gone()
 
-            if(SingletonClass.get().testingBT){
-                SingletonClass.get().testingBTSuccess=true;
-                val intent = Intent(activity, TestActivity::class.java)
-                startActivity(intent)
-            }
+            SingletonClass.get().testingBTSuccess=true;
         } else {
             showNoDevices()
+            SingletonClass.get().testingBTSuccess=false;
+        }
+        if(!SingletonClass.get().weHaveTestedBT && SingletonClass.get().testingBT){
+            SingletonClass.get().weHaveTestedBT=true
+            findNavController().navigate(R.id.action_deviceScanFragTest_to_testFragment)
         }
     }
 

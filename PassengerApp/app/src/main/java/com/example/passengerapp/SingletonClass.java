@@ -17,6 +17,9 @@ public class SingletonClass {
     List<String> history;
     Boolean connectedToADevice;
     String chattingWithString;
+    Boolean testingBT;
+    Boolean testingBTSuccess;
+    Boolean weHaveTestedBT;
 
     //property created only one time
     private static SingletonClass mSingletonClass;
@@ -27,6 +30,9 @@ public class SingletonClass {
         history = new ArrayList<String>();
         connectedToADevice = false;
         chattingWithString = "";
+        testingBT = false;
+        testingBTSuccess = false;
+        weHaveTestedBT = false;
     }
 
     //The other classes use this get method
@@ -63,5 +69,29 @@ public class SingletonClass {
     }
     public void setChattingWithString(String value){
         this.chattingWithString = value;
+    }
+
+    //TestingBT
+    public void setTestingBT(boolean testingBT){
+        this.testingBT = testingBT;
+    }
+    public boolean getTestingBT(){
+        return this.testingBT;
+    }
+
+    //TestingBTSuccess
+    public void setTestingBTSuccess(boolean testingBTSuccess){
+        this.testingBTSuccess = testingBTSuccess;
+    }
+    public boolean getTestingBTSuccess(){
+        return this.testingBTSuccess;
+    }
+
+    //TestingBTSuccess
+    public void setWeHaveTestedBT(boolean weHaveTestedBT){
+        this.weHaveTestedBT = weHaveTestedBT;
+    }
+    public boolean getWeHaveTestedBT(){
+        return this.weHaveTestedBT;
     }
 }
