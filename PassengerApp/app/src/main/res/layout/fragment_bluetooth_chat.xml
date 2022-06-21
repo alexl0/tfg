@@ -19,7 +19,7 @@
             android:gravity="center"
             android:shadowRadius="@android:integer/config_longAnimTime"
             android:text="@string/no_connected_device_message"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
 
             android:textSize="24dp" />
 

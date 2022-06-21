@@ -224,7 +224,7 @@ class BluetoothChatFragment : Fragment() {
         binding.connectedContainer.gone()
         binding.connectDeviceMessage.text = resources.getString(R.string.no_connected_device_message)
         binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#ff0000"))
-        binding.connectDeviceMessage.setTextColor(Color.parseColor("#ffffff"))
+        binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
 
         binding.connectDevices.isEnabled = true;
         binding.disconnectFromDevice.isEnabled = false;

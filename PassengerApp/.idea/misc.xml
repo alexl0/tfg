@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_device_scan_test.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_main.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/activity_test.xml" value="0.33" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_buy_vouchers.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_device_scan.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_device_scan_frag_test.xml" value="0.3625" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_device_scan_test.xml" value="0.3625" />
+        <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_my_vouchers.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/Al/git/tfg/PassengerApp/app/src/main/res/layout/fragment_test.xml" value="0.3625" />
         <entry key="..\:/Users/PC/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.209375" />
         <entry key="..\:/git/AndroidStudioProjects/connectivity-samples-main/BluetoothLeChat/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.11614583333333334" />
@@ -76,5 +79,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.16770833333333332" />
+      </ProjectState>
+    </option>
   </component>
 </project>
