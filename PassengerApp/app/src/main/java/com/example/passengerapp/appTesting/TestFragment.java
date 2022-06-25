@@ -129,9 +129,7 @@ public class TestFragment extends Fragment {
                 SingletonClass.get().setTestingBT(true);
                 SingletonClass.get().setTestingBTSuccess(false);
                 SingletonClass.get().setWeHaveTestedBT(false);
-                //TODO crear en vez de un fragmento, una actividad
-                //Intent intent = new Intent(TestActivity.this, DeviceScanActivityTest.class);
-                //startActivity(intent);
+                //Navigate to device_scan_fragment_test
                 Navigation.findNavController(view).navigate(R.id.action_testFragment_to_deviceScanFragTest);
             }
         });

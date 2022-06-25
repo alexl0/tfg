@@ -214,8 +214,9 @@ class BluetoothChatFragment : Fragment() {
         }
         //Mostramos en la pantalla principal
         binding.connectDeviceMessage.text = SingletonClass.get().chattingWithString;
-        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#09ff00"))
-        binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
+        binding.connectDeviceMessageBorder.setBackgroundColor(Color.parseColor("#09ff00"))
+        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#cbffc2"))
+        //binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
     }
 
     private fun showDisconnected() {
@@ -223,8 +224,9 @@ class BluetoothChatFragment : Fragment() {
         //binding.notConnectedContainer.visible()
         binding.connectedContainer.gone()
         binding.connectDeviceMessage.text = resources.getString(R.string.no_connected_device_message)
-        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#ff0000"))
-        binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
+        binding.connectDeviceMessageBorder.setBackgroundColor(Color.parseColor("#ff0000"))
+        binding.connectDeviceMessage.setBackgroundColor(Color.parseColor("#ffc2c2"))
+        //binding.connectDeviceMessage.setTextColor(Color.parseColor("#000000"))
 
         binding.connectDevices.isEnabled = true;
         binding.disconnectFromDevice.isEnabled = false;

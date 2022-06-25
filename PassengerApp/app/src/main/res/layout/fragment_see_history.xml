@@ -5,19 +5,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".seeHistoryFragment">
-    <Button
-        android:id="@+id/deleteHistoryButton"
+    <LinearLayout
+        android:id="@+id/deleteHistoryBorder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:text="@string/deleteHistory"
-        android:textColor="#FF0000"
-        android:visibility="visible"/>
+        android:padding="3dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="#FF0000">
+        <Button
+            android:id="@+id/deleteHistoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ffc2c2"
+            android:text="@string/deleteHistory"
+            android:textColor="#000000"
+            android:visibility="visible"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/listViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:stackFromBottom="true"
         android:transcriptMode="normal"
-        android:layout_gravity="top"></ListView>
+        android:layout_gravity="top"
+        android:textSize="3mm"></ListView>
 </LinearLayout>

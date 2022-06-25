@@ -3,6 +3,7 @@ package com.example.passengerapp;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 /**
@@ -24,6 +26,7 @@ public class seeHistoryFragment extends Fragment {
     private ListView listViewHistory;
     private ArrayAdapter<String> myAdapter;
     Button deleteHistoryButton;
+    LinearLayout deleteHistoryBorder;
     AlertDialog.Builder builder;
     public seeHistoryFragment() {
         // Required empty public constructor
@@ -62,6 +65,8 @@ public class seeHistoryFragment extends Fragment {
         listViewHistory.setAdapter(myAdapter);
 
         deleteHistoryButton = view.findViewById(R.id.deleteHistoryButton);
+        deleteHistoryBorder = view.findViewById(R.id.deleteHistoryBorder);
+        deleteHistoryBorder.setBackgroundColor(Color.parseColor("#FF0000"));
 
         deleteHistoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
