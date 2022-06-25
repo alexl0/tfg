@@ -105,11 +105,9 @@ public class TestFragment extends Fragment {
             textViewDetect.setText("-");
             textViewDetect.setTextColor(Color.WHITE);
         } else if(testingBTSuccess){
-            textViewDetect.setText("OK");
-            textViewDetect.setTextColor(Color.GREEN);
+            textViewDetect.setText("OK✅");
         } else{
-            textViewDetect.setText("KO");
-            textViewDetect.setTextColor(Color.RED);
+            textViewDetect.setText("KO❌");
         }
 
         // Initialize Firebase
@@ -189,8 +187,7 @@ public class TestFragment extends Fragment {
                             // Sign in success, update UI with the signed-in user's information
                             //Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            textViewLogin.setText("OK");
-                            textViewLogin.setTextColor(Color.GREEN);
+                            textViewLogin.setText("OK✅");
                             testDBButton1.setEnabled(true);
                             testDBButton2.setEnabled(true);
                             testDBButton3.setEnabled(true);
@@ -203,8 +200,7 @@ public class TestFragment extends Fragment {
                             //Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(getActivity(), "Authentication failed with testing credentials.",
                                     Toast.LENGTH_LONG).show();
-                            textViewLogin.setText("KO");
-                            textViewLogin.setTextColor(Color.RED);
+                            textViewLogin.setText("KO❌");
                             Toast.makeText(getActivity(), "KO. Error logging in.",
                                     Toast.LENGTH_LONG).show();
                         }
@@ -255,8 +251,7 @@ public class TestFragment extends Fragment {
 
                     //Add/update the user to/from the database
                     db.collection("users").document(testEmail).set(userHash);
-                    textViewModify.setText("OK");
-                    textViewModify.setTextColor(Color.GREEN);
+                    textViewModify.setText("OK✅");
                     Toast.makeText(getActivity(), "OK. Every zone has now " + numberOfVoyages + " trips.",
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -264,8 +259,7 @@ public class TestFragment extends Fragment {
                     Toast.makeText(getActivity(), "ERROR" + " get failed with " + task.getException(),
                             Toast.LENGTH_LONG).show();
                     modifyDBisOk=false;
-                    textViewModify.setText("KO");
-                    textViewModify.setTextColor(Color.RED);
+                    textViewModify.setText("KO❌");
                 }
             }
         });
@@ -289,13 +283,11 @@ public class TestFragment extends Fragment {
                                     modifyDBisOk = false;
                             }
                             if(modifyDBisOk) {
-                                textViewModify.setText("OK");
-                                textViewModify.setTextColor(Color.GREEN);
+                                textViewModify.setText("OK✅");
                                 Toast.makeText(getActivity(), "OK. There are " + numZones + " trips for each zone.",
                                         Toast.LENGTH_SHORT).show();
                             } else{
-                                textViewModify.setText("KO");
-                                textViewModify.setTextColor(Color.RED);
+                                textViewModify.setText("KO❌");
                                 Toast.makeText(getActivity(), "KO. There are NOT " + numZones + " trips for each zone.",
                                         Toast.LENGTH_LONG).show();
                             }
