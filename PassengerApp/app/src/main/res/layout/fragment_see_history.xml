@@ -19,15 +19,16 @@
             android:backgroundTint="#ffc2c2"
             android:text="@string/deleteHistory"
             android:textColor="#000000"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:stackFromBottom="true"
-        android:transcriptMode="normal"
         android:layout_gravity="top"
-        android:textSize="3mm"></ListView>
+        android:stackFromBottom="true"
+        android:textSize="4mm"
+        android:transcriptMode="normal"></ListView>
 </LinearLayout>

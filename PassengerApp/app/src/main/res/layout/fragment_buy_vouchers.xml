@@ -37,7 +37,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="3mm"
-                    android:text="@string/numzones" />
+                    android:text="@string/numzones"
+                    android:textColor="#000000"/>
 
                 <Spinner
                     android:id="@+id/spinnerNumZonesBuy"
@@ -62,7 +63,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="3mm"
-                    android:text="@string/numTrips" />
+                    android:text="@string/numTrips"
+                    android:textColor="#000000"/>
 
                 <Spinner
                     android:id="@+id/spinnerNumTripsBuy"
@@ -87,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="3mm"
-                    android:text="@string/totalPrice" />
+                    android:text="@string/totalPrice"
+                    android:textColor="#000000"/>
             </LinearLayout>
             <com.paypal.checkout.paymentbutton.PayPalButton
                 android:id="@+id/payPalButton"
@@ -100,7 +103,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:text="@string/viewZonesMap"/>
+                android:text="@string/viewZonesMap"
+                android:textSize="15dp" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

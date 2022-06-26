@@ -25,7 +25,9 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColorHint="#424242"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -34,7 +36,9 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColorHint="#424242"
+            android:textColor="#000000"/>
 
         <LinearLayout
             android:id="@+id/shadow"
@@ -49,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:text="@string/signUp" />
+                android:text="@string/signUp"
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/logInButton"
@@ -57,7 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:text="@string/logIn" />
+                android:text="@string/logIn"
+                android:textSize="15dp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -69,6 +75,7 @@
             android:paddingStart="16dp"
             android:text="Google"
             android:textAlignment="center"
-            android:textColor="@color/myBlack" />
+            android:textColor="@color/myBlack"
+            android:textSize="15dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

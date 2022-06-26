@@ -142,7 +142,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:text="Test login" />
+            android:text="Test login"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/testBTButton"
@@ -150,14 +151,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="Test BT" />
+            android:text="Test BT"
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="DB Testing:" />
+            android:text="DB Testing:"
+            android:textSize="3mm"
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/testDBButton1"
@@ -166,7 +170,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:enabled="false"
-            android:text="Put every zone to 0 trips" />
+            android:text="Put every zone to 0 trips"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/testDBButton2"
@@ -175,7 +180,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:enabled="false"
-            android:text="Check every zone has 0 trip" />
+            android:text="Check every zone has 0 trip"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/testDBButton3"
@@ -184,7 +190,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:enabled="false"
-            android:text="Put every zone to 50 trips" />
+            android:text="Put every zone to 50 trips"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/testDBButton4"
@@ -193,7 +200,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:enabled="false"
-            android:text="Check every zone has 50 trip" />
+            android:text="Check every zone has 50 trip"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/logoutButton"
@@ -202,7 +210,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:enabled="false"
-            android:text="log out" />
+            android:text="log out"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <fragment

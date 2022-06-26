@@ -12,13 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/bt_not_enabled"/>
+        android:text="@string/bt_not_enabled"
+        android:textSize="16dp"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/error_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/enable_bluetooth_prompt"/>
+        android:text="@string/enable_bluetooth_prompt"
+        android:textSize="15dp" />
 
 </LinearLayout>

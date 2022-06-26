@@ -26,7 +26,8 @@
             android:layout_gravity="center"
             android:paddingTop="16dp"
             android:text="@string/active_scan_message"
-            android:textSize="3mm"/>
+            android:textSize="4mm"
+            android:textColor="#000000"/>
     </LinearLayout>
 
     <LinearLayout
