@@ -1,5 +1,5 @@
 
-package com.example.passengerapp.chat
+package com.example.passengerapp.protocol
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
@@ -27,7 +27,6 @@ import com.jakewharton.processphoenix.ProcessPhoenix
 import android.app.PendingIntent
 
 import android.content.Intent
-import android.widget.Toast
 import com.example.passengerapp.*
 import java.io.File
 

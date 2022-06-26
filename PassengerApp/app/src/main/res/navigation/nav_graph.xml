@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/bluetoothChatFragment"
-        android:name="com.example.passengerapp.chat.BluetoothChatFragment"
+        android:name="com.example.passengerapp.protocol.BluetoothChatFragment"
         android:label="BluetoothChatFragment" >
         <action
             android:id="@+id/action_find_new_device"

@@ -35,20 +35,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/buy_vouchers_prompt"/>
+            android:text="@string/buy_vouchers_prompt"
+            android:textSize="15dp" />
         <Button
             android:id="@+id/myVouchers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/my_vouchers_prompt"/>
+            android:text="@string/my_vouchers_prompt"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/connect_devices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/connect_device_prompt"/>
+            android:text="@string/connect_device_prompt"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/disconnect_from_device"
@@ -56,14 +59,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:enabled="false"
-            android:text="@string/disconnect_from_device_prompt"/>
+            android:text="@string/disconnect_from_device_prompt"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/seeHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/seeHistory_prompt"/>
+            android:text="@string/seeHistory_prompt"
+            android:textSize="15dp" />
 
     </LinearLayout>
 
