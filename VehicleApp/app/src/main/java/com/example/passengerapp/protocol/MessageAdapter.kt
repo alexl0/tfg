@@ -1,5 +1,5 @@
 
-package com.example.passengerapp.chat
+package com.example.passengerapp.protocol
 
 import android.util.Log
 import android.view.LayoutInflater

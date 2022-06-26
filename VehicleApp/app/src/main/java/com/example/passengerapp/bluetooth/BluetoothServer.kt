@@ -13,7 +13,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.passengerapp.bluetooth.Message.RemoteMessage
-import com.example.passengerapp.chat.DeviceConnectionState
+import com.example.passengerapp.protocol.DeviceConnectionState
 
 private const val TAG = "ChatServer"
 
