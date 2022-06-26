@@ -38,7 +38,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/numzones"
-                    android:textSize="3mm"/>
+                    android:textSize="3mm"
+                    android:textColor="#000000"/>
 
                 <Spinner
                     android:id="@+id/spinnerNumZonesVehicle"
@@ -85,7 +86,8 @@
                         android:text="@string/changeName"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textSize="15dp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputLayoutNewName"
@@ -97,14 +99,17 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/buttonChangeName"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textColorHint="#424242"
+                        android:textColor="#000000">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/textInputEditTextNewName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="@string/changeNameHint"
-                            android:textSize="3mm"/>
+                            android:textSize="3mm"
+                            android:textColor="#000000"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,7 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/totalPrice"
-                        android:textSize="3mm"/>
+                        android:textSize="3mm"
+                        android:textColor="#000000"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -144,7 +150,8 @@
                     android:text="@string/changePlate"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="15dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutNewPlate"
@@ -156,14 +163,17 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/buttonChangePlate"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColorHint="#424242"
+                    android:textColor="#000000">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/textInputEditTextNewPlate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="@string/changePlateHint"
-                        android:textSize="3mm"/>
+                        android:textSize="3mm"
+                        android:textColor="#000000"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -180,7 +190,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/currentPlate"
-                    android:textSize="3mm"/>
+                    android:textSize="3mm"
+                    android:textColor="#000000"/>
             </LinearLayout>
 
             <LinearLayout
