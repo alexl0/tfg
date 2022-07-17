@@ -15,7 +15,7 @@
         <LinearLayout
             android:id="@+id/connect_device_message_border"
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="142dp"
             android:padding="5dp">
             <TextView
                 android:id="@+id/connect_device_message"

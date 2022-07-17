@@ -196,7 +196,7 @@ class BluetoothChatFragment : Fragment() {
         if(!SingletonClass.get().isConnectedToADevice){
             SingletonClass.get().isConnectedToADevice = true
 
-            val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+            val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
             val currentDate = sdf.format(Date())
             val deviceName = device.name
             val deviceNameWithZonesWordLocated = deviceName.subSequence(0, deviceName.length-6).toString() + "\n" +
